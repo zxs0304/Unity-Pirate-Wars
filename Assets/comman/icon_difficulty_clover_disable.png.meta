@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      icon_difficulty_clover_disable_0: -3399318563335440092
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

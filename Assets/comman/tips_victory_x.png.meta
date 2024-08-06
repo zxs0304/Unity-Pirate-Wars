@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tips_victory_x_0: -6382159957367508356
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

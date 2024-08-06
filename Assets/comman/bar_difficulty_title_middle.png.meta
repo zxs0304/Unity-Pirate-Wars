@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bar_difficulty_title_middle_0: 8704646927654502965
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

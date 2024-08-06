@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      icon_home_game_thinking_0: -1075522629157379563
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

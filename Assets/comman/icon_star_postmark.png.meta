@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      icon_star_postmark_0: 989586952319935318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

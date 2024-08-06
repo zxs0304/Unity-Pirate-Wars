@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bar_shootsea_bottom_0: -8976589387237053057
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

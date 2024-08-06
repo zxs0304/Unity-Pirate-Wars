@@ -59,14 +59,7 @@ public class Parabole : MonoBehaviour
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         parabolaLine.positionCount = line1Num;
-        for (int t = 0; t<line1Num; t++)
-        {
-            points1[t] = transform.position
-                + transform.right * releaseForce * t * pointsGap
-                + Physics.gravity * 0.5f * t* pointsGap * t* pointsGap;  
-        }
-
-        parabolaLine.SetPositions(points1);
+        
 
 
         //switch (state)
@@ -140,7 +133,26 @@ public class Parabole : MonoBehaviour
 
     private void OnMouseDown()
     {
-        nextState = STATE.Grab;
+
+    }
+
+    private void OnMouseDrag()
+    {
+
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        print(mousePosition);
+        print(transform.position);
+        print(Physics.gravity);
+        for (int t = 0; t < line1Num; t++)
+        {
+            points1[t] = (Vector2)transform.position
+                + ((Vector2)transform.position - mousePosition).normalized * releaseForce * t * pointsGap
+                + (Vector2)Physics.gravity * 0.5f * t * pointsGap * t * pointsGap;
+        }
+
+        parabolaLine.SetPositions(points1);
+
+
     }
 
     private void OnMouseUp()

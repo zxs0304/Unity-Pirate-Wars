@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      icon_home_game_motion_0: 2663331353992315423
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

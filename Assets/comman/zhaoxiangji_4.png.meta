@@ -248,7 +248,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      zhaoxiangji_4_0: 8073114783589333053
+      zhaoxiangji_4_1: 5548606516859130432
+      zhaoxiangji_4_2: 4655271624210477729
+      zhaoxiangji_4_3: -4469737672938415570
+      zhaoxiangji_4_4: -5898726718651818060
+      zhaoxiangji_4_5: -985784345069751293
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
