@@ -66,7 +66,7 @@ public class Parabole : MonoBehaviour
             line1Points[t] = (Vector2)transform.position
                 + (((Vector2)transform.position - mousePosition).normalized * addForce * fixedForce / rb.mass ) *  (t * pointsGap)
                 + (Physics2D.gravity * gravityForce) * 0.5f * (t * pointsGap) * (t * pointsGap);
-            
+            //以平抛运动举例，当高度为h时，增大重力加速度，会减少空中运动的时间，如果我想要到达相同的位置，那么就要增加初始的力。进而就达到了“到达相同位置，加快运动过程”的效果。
         }
 
         line1.SetPositions(line1Points);
