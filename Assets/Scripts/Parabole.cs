@@ -16,7 +16,9 @@ public class Parabole : MonoBehaviour
     public float maxForce = 8f;
     public float addForce;
     public float fixedForce = 3.5f;
+    public float gravityForce = 5f;
     public float rotate = 5; //发射时施加的扭矩大小
+    
     private Rigidbody2D rb;
     public float pointsGap = 0.2f; //时间的细分刻度，该值越小，抛物线越准确
     public Vector2 releaseVelocity; //释放那一刻施加的力
@@ -63,7 +65,8 @@ public class Parabole : MonoBehaviour
         {
             line1Points[t] = (Vector2)transform.position
                 + (((Vector2)transform.position - mousePosition).normalized * addForce * fixedForce / rb.mass ) *  (t * pointsGap)
-                + (Physics2D.gravity) * 0.5f * (t * pointsGap) * (t * pointsGap);
+                + (Physics2D.gravity * gravityForce) * 0.5f * (t * pointsGap) * (t * pointsGap);
+            
         }
 
         line1.SetPositions(line1Points);
