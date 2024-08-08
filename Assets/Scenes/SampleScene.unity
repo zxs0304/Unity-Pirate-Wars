@@ -130,40 +130,15 @@ GameObject:
   m_Component:
   - component: {fileID: 53102590}
   - component: {fileID: 53102589}
-  - component: {fileID: 53102588}
   - component: {fileID: 53102592}
   - component: {fileID: 53102593}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &53102588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53102587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a5b5aa6fcc44134398836c5772cfd2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0}
-  line1: {fileID: 0}
-  line2: {fileID: 0}
-  line1Num: 8
-  line2Num: 2
-  maxForce: 8
-  addForce: 0
-  fixedForce: 3.5
-  rotate: 5
-  pointsGap: 0.2
-  releaseVelocity: {x: 0, y: 0}
-  dragPoint: {fileID: 0}
+  m_IsActive: 1
 --- !u!212 &53102589
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -224,8 +199,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53102587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 3.5, z: 1}
+  m_LocalPosition: {x: 0.5481, y: -0.8565, z: 0}
+  m_LocalScale: {x: 3.4424, y: 5.754, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
