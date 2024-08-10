@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      caneGreenTopAlt_0: -3650361417792935144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

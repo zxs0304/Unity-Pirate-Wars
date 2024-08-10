@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      alienBlue_swim2_0: -4513646947909566273
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

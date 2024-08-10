@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      strip_purple_03_0: -98374633752449137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

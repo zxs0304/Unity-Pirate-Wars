@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spinnerHalf_dead_0: 8730918561999805824
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

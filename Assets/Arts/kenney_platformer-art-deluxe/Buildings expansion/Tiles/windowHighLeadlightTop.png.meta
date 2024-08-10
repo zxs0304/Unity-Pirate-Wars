@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      windowHighLeadlightTop_0: -4151541737045250710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

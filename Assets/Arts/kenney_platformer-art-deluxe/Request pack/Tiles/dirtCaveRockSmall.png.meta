@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dirtCaveRockSmall_0: 8686457853116074396
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

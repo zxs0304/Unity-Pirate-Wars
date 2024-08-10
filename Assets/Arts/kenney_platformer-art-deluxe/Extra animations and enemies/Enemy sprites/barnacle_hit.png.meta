@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      barnacle_hit_0: 579173162387760378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

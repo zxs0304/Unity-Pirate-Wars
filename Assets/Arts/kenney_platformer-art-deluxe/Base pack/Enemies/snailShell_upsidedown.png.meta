@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      snailShell_upsidedown_0: 5178857729964120511
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

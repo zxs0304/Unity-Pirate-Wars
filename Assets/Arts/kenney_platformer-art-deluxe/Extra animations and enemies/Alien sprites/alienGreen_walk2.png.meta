@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      alienGreen_walk2_0: -6176749193863806790
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

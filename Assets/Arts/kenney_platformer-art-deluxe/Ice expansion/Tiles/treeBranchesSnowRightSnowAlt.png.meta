@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      treeBranchesSnowRightSnowAlt_0: 7396425202427778414
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

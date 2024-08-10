@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spark_05_rotated_0: 4828392914078121578
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

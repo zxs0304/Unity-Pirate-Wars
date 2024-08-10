@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hud_keyBlue_0: 430492262738510312
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lollipopFruitRed_0: 7360660141692134176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

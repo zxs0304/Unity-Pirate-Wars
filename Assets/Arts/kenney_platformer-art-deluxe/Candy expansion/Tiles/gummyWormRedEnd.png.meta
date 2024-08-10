@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gummyWormRedEnd_0: 5447117045225926792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

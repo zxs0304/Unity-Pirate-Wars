@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tile_0754_0: -5024188095402661991
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

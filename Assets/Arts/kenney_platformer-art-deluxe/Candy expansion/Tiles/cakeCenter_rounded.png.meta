@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cakeCenter_rounded_0: 4536281025030800541
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

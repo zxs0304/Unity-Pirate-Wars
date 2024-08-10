@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Skateboard1_0: 5997221091796772261
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      scorch_01_0: -7002040975782695533
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

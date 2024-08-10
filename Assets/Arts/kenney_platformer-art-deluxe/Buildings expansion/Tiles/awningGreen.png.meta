@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      awningGreen_0: -2969356683332332773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

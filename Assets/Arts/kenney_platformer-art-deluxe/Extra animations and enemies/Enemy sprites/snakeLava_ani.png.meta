@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      snakeLava_ani_0: -5358633068277174845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tinyShroom_red_0: 4115066244455725585
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

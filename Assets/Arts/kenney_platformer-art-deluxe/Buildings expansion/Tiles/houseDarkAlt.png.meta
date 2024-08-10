@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      houseDarkAlt_0: 7727017961852189405
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

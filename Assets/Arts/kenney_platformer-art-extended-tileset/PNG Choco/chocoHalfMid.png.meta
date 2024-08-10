@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chocoHalfMid_0: 6324065488677190443
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

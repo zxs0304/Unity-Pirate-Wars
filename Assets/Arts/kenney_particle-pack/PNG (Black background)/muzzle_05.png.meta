@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      muzzle_05_0: 4718968817536793496
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

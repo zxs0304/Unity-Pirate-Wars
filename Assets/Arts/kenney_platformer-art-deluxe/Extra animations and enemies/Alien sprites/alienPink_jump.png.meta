@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      alienPink_jump_0: 5956305335976936530
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      snowHillLeft2_0: -67875183552887712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

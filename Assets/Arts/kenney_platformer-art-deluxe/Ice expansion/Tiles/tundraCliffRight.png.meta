@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tundraCliffRight_0: 1357784599307703614
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

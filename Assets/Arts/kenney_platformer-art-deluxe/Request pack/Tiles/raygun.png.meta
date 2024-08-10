@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      raygun_0: 1325427061794723504
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

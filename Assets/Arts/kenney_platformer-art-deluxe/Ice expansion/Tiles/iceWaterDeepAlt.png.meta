@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      iceWaterDeepAlt_0: 6031759973619469876
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

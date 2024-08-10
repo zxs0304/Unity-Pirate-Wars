@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lollipopBaseCake_0: -1513596240788811373
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

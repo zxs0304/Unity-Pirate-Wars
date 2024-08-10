@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shroomBrownAltSpotsLeft_0: 4633628892565421253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

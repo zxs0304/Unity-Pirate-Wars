@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gummyWormRedMid_0: -6646930019085209878
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

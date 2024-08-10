@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      metalCliffRight_0: -6151026450223679602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

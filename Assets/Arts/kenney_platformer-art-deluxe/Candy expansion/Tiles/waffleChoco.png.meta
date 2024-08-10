@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      waffleChoco_0: -8258932878100929034
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

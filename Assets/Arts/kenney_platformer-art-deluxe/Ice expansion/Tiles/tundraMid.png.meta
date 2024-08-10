@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tundraMid_0: -238645213108186881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

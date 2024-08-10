@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wafflePink_0: 4977706432014445058
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

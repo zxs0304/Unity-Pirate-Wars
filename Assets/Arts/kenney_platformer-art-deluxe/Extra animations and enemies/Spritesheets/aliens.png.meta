@@ -152,7 +152,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      aliens_0: 549789040878832339
+      aliens_1: 7195286303463575904
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

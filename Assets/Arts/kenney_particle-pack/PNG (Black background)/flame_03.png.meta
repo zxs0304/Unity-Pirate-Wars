@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      flame_03_0: -2676187800237472831
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

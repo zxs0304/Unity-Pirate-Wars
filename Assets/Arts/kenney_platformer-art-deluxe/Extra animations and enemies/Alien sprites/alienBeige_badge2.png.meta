@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      alienBeige_badge2_0: -7360338084616516806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

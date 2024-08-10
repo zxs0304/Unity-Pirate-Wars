@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cookieChoco_0: -5132259090097587236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fishGreen_hit_0: 5257075692241327297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

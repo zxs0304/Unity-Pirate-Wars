@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slime_squashed_0: 4826870862271017125
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

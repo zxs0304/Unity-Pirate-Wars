@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      iceWaterDeepStarsAlt_0: 3856129225743536979
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

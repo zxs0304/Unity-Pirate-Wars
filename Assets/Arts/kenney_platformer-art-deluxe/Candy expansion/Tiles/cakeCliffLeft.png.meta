@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cakeCliffLeft_0: -8016733553618771899
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

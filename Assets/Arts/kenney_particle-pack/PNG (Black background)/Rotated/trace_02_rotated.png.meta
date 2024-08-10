@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      trace_02_rotated_0: 8131470162231661646
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

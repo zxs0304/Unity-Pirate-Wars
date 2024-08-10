@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      liquidLavaTop_0: -3664052488262645725
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

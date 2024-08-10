@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      snakeSlime_dead_0: -7002794158406577724
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

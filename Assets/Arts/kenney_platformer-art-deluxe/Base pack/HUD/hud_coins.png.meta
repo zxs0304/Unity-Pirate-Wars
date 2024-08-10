@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hud_coins_0: 7502640729128188464
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

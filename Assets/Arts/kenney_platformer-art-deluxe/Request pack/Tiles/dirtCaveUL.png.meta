@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dirtCaveUL_0: 2557992673752809222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

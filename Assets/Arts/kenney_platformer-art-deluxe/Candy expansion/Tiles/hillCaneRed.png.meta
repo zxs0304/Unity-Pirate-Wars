@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hillCaneRed_0: 4524253013591092668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

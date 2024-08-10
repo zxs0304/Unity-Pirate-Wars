@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tallShroom_brown_0: 421328880650861555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

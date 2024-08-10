@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      flame_06_rotated_0: 7155417178851020209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

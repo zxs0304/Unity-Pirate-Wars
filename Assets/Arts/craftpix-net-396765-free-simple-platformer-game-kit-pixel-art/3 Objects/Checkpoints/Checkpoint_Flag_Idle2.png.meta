@@ -272,7 +272,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Checkpoint_Flag_Idle2_0: 6720336253026491759
+      Checkpoint_Flag_Idle2_1: -3351725035190038222
+      Checkpoint_Flag_Idle2_2: 2972969980553421207
+      Checkpoint_Flag_Idle2_3: 2996479743307832972
+      Checkpoint_Flag_Idle2_4: 1338355237507068567
+      Checkpoint_Flag_Idle2_5: 2852434796177201393
+      Checkpoint_Flag_Idle2_6: -8200662593683230775
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      piranha_dead_0: -8143817738206534275
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

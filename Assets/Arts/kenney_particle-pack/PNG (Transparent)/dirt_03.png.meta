@@ -344,7 +344,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dirt_03_0: -8426780970491567616
+      dirt_03_1: 6068598778204567901
+      dirt_03_2: 6108788240920391718
+      dirt_03_3: -6303262406926332552
+      dirt_03_4: -7582522206593479262
+      dirt_03_5: 390102469598122272
+      dirt_03_6: -7129776124608419860
+      dirt_03_7: 6709364947372640458
+      dirt_03_8: 4556747264361619660
+      dirt_03_9: -5117637423767881225
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

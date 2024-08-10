@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      marble_packed_0: 5289985628427748463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

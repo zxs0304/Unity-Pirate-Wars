@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dirtHillRight_0: -2299324454858748986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

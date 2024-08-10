@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      muzzle_04_rotated_0: 880420013024751629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

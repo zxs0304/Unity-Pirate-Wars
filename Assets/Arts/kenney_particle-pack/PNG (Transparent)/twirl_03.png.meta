@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      twirl_03_0: -8385388364165459849
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

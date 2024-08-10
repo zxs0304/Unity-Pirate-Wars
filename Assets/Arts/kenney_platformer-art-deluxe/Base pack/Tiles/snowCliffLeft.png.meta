@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      snowCliffLeft_0: -3013907362399987091
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      iglooRoofRight_0: 73478470083424145
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
