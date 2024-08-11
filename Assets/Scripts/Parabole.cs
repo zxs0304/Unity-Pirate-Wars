@@ -42,6 +42,11 @@ public class Parabole : MonoBehaviour
         dragPoint.SetActive(false);
     }
 
+    private void Update()
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+
 
     private void OnMouseDown()
     {
