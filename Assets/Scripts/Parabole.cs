@@ -13,10 +13,10 @@ public class Parabole : MonoBehaviour
     private Vector3[] line1Points; //抛物线的点集
     public int line2Num = 2;
     private Vector3[] line2Points;
-    public float maxForce = 8f;
+    public float maxForce;
     public float addForce;
-    public float fixedForce = 3.5f;
-    public float gravityForce = 5f;
+    public float fixedForce;
+    public float gravityForce;
     public float rotate = 5; //发射时施加的扭矩大小
     
     private Rigidbody2D rb;
