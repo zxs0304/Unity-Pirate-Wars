@@ -91,6 +91,7 @@ public class Parabole : MonoBehaviour
         line2.enabled = false;
         dragPoint.SetActive(false);
         GetComponent<Bomb>().throwing = true;
+        CameraManager.Instance.SetCameraFollow();
 
     }
 
