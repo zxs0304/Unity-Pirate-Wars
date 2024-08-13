@@ -63,8 +63,6 @@ public class Bomb : MonoBehaviour
     {
         Gizmos.color = Color.red;
 
-            Gizmos.DrawWireSphere(explodePosition, explodeRadius);
- 
-
+        Gizmos.DrawWireSphere(explodePosition, explodeRadius);
     }
 }

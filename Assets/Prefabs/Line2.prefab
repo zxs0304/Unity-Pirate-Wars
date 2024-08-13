@@ -40,7 +40,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2316692884563898271}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -73,10 +73,10 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Positions:
-  - {x: -1, y: 0, z: 0}
-  - {x: 10, y: 0, z: 0}
+  - {x: -23.16095, y: -27.60342, z: 0}
+  - {x: -24.337425, y: -29.43222, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.1

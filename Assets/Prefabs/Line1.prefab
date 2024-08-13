@@ -40,7 +40,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5785752986112081270}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -73,18 +73,18 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Positions:
-  - {x: 1, y: 0, z: 0}
-  - {x: 3, y: 0, z: 0}
-  - {x: 5, y: 0, z: 0}
-  - {x: 7, y: 0, z: 0}
-  - {x: 9, y: 0, z: 0}
-  - {x: 11, y: 0, z: 0}
-  - {x: 13, y: 0, z: 0}
-  - {x: 15, y: 0, z: 0}
-  - {x: 17, y: 0, z: 0}
-  - {x: 19, y: 0, z: 0}
+  - {x: -23.16095, y: -27.60342, z: 0}
+  - {x: -22.398594, y: -26.559622, z: 0}
+  - {x: -21.636238, y: -25.798351, z: 0}
+  - {x: -20.873882, y: -25.319609, z: 0}
+  - {x: -20.111525, y: -25.123394, z: 0}
+  - {x: -19.349169, y: -25.209707, z: 0}
+  - {x: -18.586813, y: -25.578548, z: 0}
+  - {x: -17.824457, y: -26.22992, z: 0}
+  - {x: -17.062101, y: -27.163818, z: 0}
+  - {x: -16.299746, y: -28.380241, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.25
