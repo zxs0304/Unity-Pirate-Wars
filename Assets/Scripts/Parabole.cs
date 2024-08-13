@@ -1,8 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Parabole : MonoBehaviour
 {
@@ -25,7 +24,7 @@ public class Parabole : MonoBehaviour
     public GameObject dragPoint;
 
     public ParaboleData paraboleData;
-
+    public Text text;
 
     private void Awake()
     {
@@ -53,6 +52,7 @@ public class Parabole : MonoBehaviour
 
     private void OnMouseDown()
     {
+        text.text = "OnMouseDown";
         line1.enabled = true;
         line2.enabled = true;
         dragPoint.SetActive(true);
@@ -60,6 +60,7 @@ public class Parabole : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        text.text = "OnMouseDrag";
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         addForce = Vector2.Distance(mousePosition, transform.position);
         addForce =  Mathf.Clamp(addForce, 0, paraboleData.maxForce);
@@ -84,7 +85,7 @@ public class Parabole : MonoBehaviour
 
     private void OnMouseUp()
     {
-
+        text.text = "OnMouseUp";
         rb.AddForce(releaseVelocity,ForceMode2D.Impulse);
         rb.AddTorque(paraboleData.rotate, ForceMode2D.Impulse);
 
