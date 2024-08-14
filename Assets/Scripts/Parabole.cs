@@ -52,7 +52,7 @@ public class Parabole : MonoBehaviour
 
     private void OnMouseDown()
     {
-        text.text = "OnMouseDown";
+        text.text = "OnMouseDown + "+gameObject.name;
         line1.enabled = true;
         line2.enabled = true;
         dragPoint.SetActive(true);
@@ -60,7 +60,7 @@ public class Parabole : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        text.text = "OnMouseDrag";
+        text.text = "OnMouseDrag + " + gameObject.name;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         addForce = Vector2.Distance(mousePosition, transform.position);
         addForce =  Mathf.Clamp(addForce, 0, paraboleData.maxForce);
@@ -85,7 +85,7 @@ public class Parabole : MonoBehaviour
 
     private void OnMouseUp()
     {
-        text.text = "OnMouseUp";
+        text.text = "OnMouseUp + " + gameObject.name;
         rb.AddForce(releaseVelocity,ForceMode2D.Impulse);
         rb.AddTorque(paraboleData.rotate, ForceMode2D.Impulse);
 
