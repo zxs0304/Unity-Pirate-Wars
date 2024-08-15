@@ -8,23 +8,17 @@ public class Parabole : MonoBehaviour
     public Vector2 mousePosition;
     public LineRenderer line1; //抛物轨迹线
     public LineRenderer line2; //鼠标与人物之间的力度直线
-    //public int line1Num = 8;
     private Vector3[] line1Points; //抛物线的点集
     public int line2Num = 2;
     private Vector3[] line2Points;
-    //public float maxForce;
     public float addForce;
-    //public float fixedForce;
-    //public float gravityForce;
-    //public float rotate = 5; //发射时施加的扭矩大小
-    
     private Rigidbody2D rb;
-    //public float pointsGap = 0.2f; //时间的细分刻度，该值越小，抛物线越准确
     public Vector2 releaseVelocity; //释放那一刻施加的力
     public GameObject dragPoint;
 
     public ParaboleData paraboleData;
     public Text text;
+
 
     private void Awake()
     {

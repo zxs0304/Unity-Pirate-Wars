@@ -37,14 +37,13 @@ public class InputManager : MonoSingleton<InputManager>
             
             foreach (var touch in Input.touches)
             {
-                print($"touchµÄ fingerID: {touch.fingerId}   Position: {touch.position}   Phase: {touch.phase}  Dealta:{touch.deltaPosition} ");
-                print($" fingerID: {touch.fingerId}   Position: {touch.position}   Phase: {touch.phase}  Dealta:{touch.deltaPosition} ");
+                print($"touchµÄ, fingerID: {touch.fingerId}   Position: {touch.position}   Phase: {touch.phase}  Dealta:{touch.deltaPosition} ");
+
                 if (touch.phase == TouchPhase.Began)
                 {
-                    touchPosition = touch.position;
-                    myray = Camera.main.ScreenPointToRay(touchPosition);
+                    myray = Camera.main.ScreenPointToRay(touch.position);
                     hit = Physics2D.Raycast(myray.origin, myray.direction, 20f);
-                    if (hit.collider != null)
+                    if (hit.collider != null || currentMoveTouch.fingerId != -1)
                     {
                         continue;
                     }
@@ -82,7 +81,7 @@ public class InputManager : MonoSingleton<InputManager>
         if (currentMoveTouch.fingerId != -1)
         {
             moveVector = currentMoveTouch.deltaPosition;
-            transform.Translate(-moveVector.normalized * moveSpeed);
+            transform.Translate(-moveVector * moveSpeed);
             if(transform.position.x < -62.67f || transform.position.x > -1.12f || transform.position.y < -27.7f || transform.position.y > -7.5f)
             {
                 transform.position = new Vector2(Mathf.Clamp(transform.position.x, -62.67f, -1.12f), Mathf.Clamp(transform.position.y, -27.7f, -7.5f));
@@ -90,7 +89,7 @@ public class InputManager : MonoSingleton<InputManager>
            
 
         }
-
+        print($" currentµÄ fingerID: {currentMoveTouch.fingerId}   Position: {currentMoveTouch.position}   Phase: {currentMoveTouch.phase}  Dealta:{currentMoveTouch.deltaPosition} ");
     }
 
 
