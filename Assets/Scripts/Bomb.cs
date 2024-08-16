@@ -51,7 +51,12 @@ public class Bomb : MonoBehaviour
   
                 Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
                 testVector = (collider.transform.position - transform.position).normalized;
+                //if (testVector.y == 0)
+                //{
+                //    testVector.y = 1f;
+                //}
                 rb.AddForce(testVector * explodeForce , ForceMode2D.Impulse);
+                rb.AddTorque(1.5f,ForceMode2D.Impulse);
                 print("¹¥»÷µ½ÁËÍæ¼Ò" + rb.name );
             }
         }

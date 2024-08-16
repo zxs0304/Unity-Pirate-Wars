@@ -6,113 +6,117 @@ using UnityEngine.UI;
 
 public class InputManager : MonoSingleton<InputManager>
 {
-    public Vector2 startPosition;
-    public Vector2 lastFramePosition;
-    public Vector2 moveVector;
-    public float moveSpeed;
-    public Text text;
-    public Vector2 touchPosition;
-    public Touch currentMoveTouch;
-    public float currentFingerId;
+
+    public float moveScreenSpeed;
+    public Touch moveScreenTouch;
+    public Touch movePlayerTouch;
+    public RaycastHit2D hit;
+    public Parabole currentParabole = null;
+
+    //TEST
     public Vector2 currentDealtaPosition;
     public Ray myray;
-    public RaycastHit2D hit;
+    public Text text;
+
+
 
     private void Start()
     {
 
 
-        currentMoveTouch.fingerId = -1;
-
+        moveScreenTouch.fingerId = -1;
+        movePlayerTouch.fingerId = -1;
     }
 
 
     private void Update()
     {
-        currentFingerId = currentMoveTouch.fingerId;
-        currentDealtaPosition = currentMoveTouch.deltaPosition;
+
         print("几个手指" + Input.touchCount);
         if (Input.touchCount > 0)
         {
             
             foreach (var touch in Input.touches)
             {
-                print($"touch的, fingerID: {touch.fingerId}   Position: {touch.position}   Phase: {touch.phase}  Dealta:{touch.deltaPosition} ");
+                //print($"touch的, fingerID: {touch.fingerId}   Position: {touch.position}   Phase: {touch.phase}  Dealta:{touch.deltaPosition} ");
 
-                if (touch.phase == TouchPhase.Began)
+                switch (touch.phase)
                 {
-                    myray = Camera.main.ScreenPointToRay(touch.position);
-                    hit = Physics2D.Raycast(myray.origin, myray.direction, 20f);
-                    if (hit.collider != null || currentMoveTouch.fingerId != -1)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        currentMoveTouch = touch;
-                    }
-                }
+                    case TouchPhase.Began:
+                        RegisterTouch(touch);
+                        break;
+                    case TouchPhase.Moved:
+                        UpdateTouch(touch);
+                        break;
+                    case TouchPhase.Stationary:
+                        UpdateTouch(touch);
+                        break;
+                    case TouchPhase.Ended:
+                        DeleteTouch(touch);
+                        break;
 
-                if (touch.phase == TouchPhase.Moved)
-                {
-                    if (currentMoveTouch.fingerId == touch.fingerId)
-                    {
-                        currentMoveTouch = touch;
-                    }
-                }
-                if (touch.phase == TouchPhase.Stationary)
-                {
-                    if (currentMoveTouch.fingerId == touch.fingerId)
-                    {
-                        currentMoveTouch = touch;
-                    }
-                }
-
-                if (touch.phase == TouchPhase.Ended)
-                {
-                    if (currentMoveTouch.fingerId == touch.fingerId)
-                    {
-                        currentMoveTouch.fingerId = -1;
-                    }
                 }
             }
         }
 
-        if (currentMoveTouch.fingerId != -1)
+
+        //print($" current的 fingerID: {moveScreenTouch.fingerId}   Position: {moveScreenTouch.position}   Phase: {moveScreenTouch.phase}  Dealta:{moveScreenTouch.deltaPosition} ");
+    }
+
+    public void RegisterTouch(Touch touch) //根据点击那刻点到的物体 来判断此次点击是要拖动屏幕还是拖动玩家
+    {
+        myray = Camera.main.ScreenPointToRay(touch.position);
+        hit = Physics2D.Raycast(myray.origin, myray.direction, 20f);
+        print(hit.collider);
+        if (hit.collider == null && moveScreenTouch.fingerId == -1)
         {
-            moveVector = currentMoveTouch.deltaPosition;
-            transform.Translate(-moveVector * moveSpeed);
-            if(transform.position.x < -62.67f || transform.position.x > -1.12f || transform.position.y < -27.7f || transform.position.y > -7.5f)
+            print("什么都没点到");
+            moveScreenTouch = touch;
+        }
+        else if (hit.collider != null && (hit.collider.CompareTag("Player") || hit.collider.CompareTag("Bomb")) && movePlayerTouch.fingerId == -1)
+        {
+            print("点到了 " + hit.collider.name);
+            movePlayerTouch = touch;
+            currentParabole = hit.collider.GetComponent<Parabole>();
+            currentParabole.OnTouchBegan();
+        }
+    }
+
+    public void UpdateTouch(Touch touch)
+    {
+        if (touch.fingerId == moveScreenTouch.fingerId)
+        {
+            //移动屏幕
+            //moveScreenTouch = touch;
+            transform.Translate(-touch.deltaPosition * moveScreenSpeed);
+            if (transform.position.x < -62.67f || transform.position.x > -1.12f || transform.position.y < -27.7f || transform.position.y > -7.5f)
             {
                 transform.position = new Vector2(Mathf.Clamp(transform.position.x, -62.67f, -1.12f), Mathf.Clamp(transform.position.y, -27.7f, -7.5f));
             }
-           
-
         }
-        print($" current的 fingerID: {currentMoveTouch.fingerId}   Position: {currentMoveTouch.position}   Phase: {currentMoveTouch.phase}  Dealta:{currentMoveTouch.deltaPosition} ");
+        else if (touch.fingerId == movePlayerTouch.fingerId)
+        {
+            //movePlayerTouch = touch;
+            Vector2 mousePosition =  Camera.main.ScreenToWorldPoint(touch.position);
+
+            currentParabole.OnTouchDrag(mousePosition);
+        }
     }
 
+    public void DeleteTouch(Touch touch)
+    {
+        if (touch.fingerId == moveScreenTouch.fingerId)
+        {
+            moveScreenTouch.fingerId = -1;
+        }
+        else if (touch.fingerId == movePlayerTouch.fingerId)
+        {
+            movePlayerTouch.fingerId = -1;
+            currentParabole.OnTouchEnded();
+            currentParabole = null;
+        }
+    }
 
-    //private void OnMouseDown()
-    //{
-    //    text.text = "OnMouseDown + Camera";
-    //    lastFramePosition = Input.mousePosition;
-
-    //}
-
-    //private void OnMouseUp()
-    //{
-
-
-    //}
-
-    //private void OnMouseDrag()
-    //{
-    //    text.text = "OnMouseDrag + Camera";
-    //    moveVector = (lastFramePosition - (Vector2)Input.mousePosition).normalized * moveSpeed;
-    //    transform.Translate(moveVector);
-
-    //}
 
     private void OnDrawGizmos()
     {

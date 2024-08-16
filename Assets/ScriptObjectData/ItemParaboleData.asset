@@ -17,5 +17,5 @@ MonoBehaviour:
   maxForce: 3
   fixedForce: 5.4
   gravityForce: 2
-  rotate: 2
+  rotate: 1
   pointsGap: 0.12
