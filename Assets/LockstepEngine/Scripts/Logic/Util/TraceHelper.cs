@@ -34,11 +34,15 @@ namespace LockstepTutorial {
 
         public void DumpInput(PlayerInput input){
             dumpSb.Append("    ");
-            dumpSb.Append(" skillId:" + input.skillId);
-            dumpSb.Append(" " + input.mousePos);
-            dumpSb.Append(" " + input.inputUV);
-            dumpSb.Append(" " + input.isInputFire);
-            dumpSb.Append(" " + input.isSpeedUp);
+            //dumpSb.Append(" skillId:" + input.skillId);
+            //dumpSb.Append(" " + input.mousePos);
+            //dumpSb.Append(" " + input.inputUV);
+            //dumpSb.Append(" " + input.isInputFire);
+            //dumpSb.Append(" " + input.isSpeedUp);
+            dumpSb.Append(" " + input.number);
+            dumpSb.Append(" " + input.forceX);
+            dumpSb.Append(" " + input.forceY);
+
             dumpSb.AppendLine();
         }
 

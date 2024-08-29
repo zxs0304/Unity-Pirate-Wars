@@ -17,9 +17,9 @@ public class User
 
     private void SpawnMinions()
     {
-        GameObject gb = Resources.Load<GameObject>("Prefabs/Player");
-         //GameObject.Instantiate(testMinion);
-        gb.transform.position = new Vector2(-8,-16);
+        //GameObject gb = Resources.Load<GameObject>("Minion");
+        //GameObject.Instantiate(gb);
+        //gb.transform.position = new Vector2(-8,-16);
     }
 
 

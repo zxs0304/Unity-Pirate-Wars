@@ -32,7 +32,7 @@ public class InputManager : MonoSingleton<InputManager>
     private void Update()
     {
 
-        print("几个手指" + Input.touchCount);
+        //print("几个手指" + Input.touchCount);
         if (Input.touchCount > 0)
         {
             
@@ -70,12 +70,12 @@ public class InputManager : MonoSingleton<InputManager>
         print(hit.collider);
         if (hit.collider == null && moveScreenTouch.fingerId == -1)
         {
-            print("什么都没点到");
+            //print("什么都没点到");
             moveScreenTouch = touch;
         }
         else if (hit.collider != null && (hit.collider.CompareTag("Player") || hit.collider.CompareTag("Bomb")) && movePlayerTouch.fingerId == -1)
         {
-            print("点到了 " + hit.collider.name);
+            //print("点到了 " + hit.collider.name);
             movePlayerTouch = touch;
             currentParabole = hit.collider.GetComponent<Parabole>();
             currentParabole.OnTouchBegan();

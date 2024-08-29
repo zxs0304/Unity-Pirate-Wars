@@ -1,6 +1,9 @@
 
+using Lockstep.Logic;
+using LockstepTutorial;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows;
 
 
 public class Parabole : MonoBehaviour
@@ -76,9 +79,14 @@ public class Parabole : MonoBehaviour
     public void OnTouchEnded()
     {
         text.text = "OnMouseUp + " + gameObject.name;
+        GameManager.CurGameInput = new PlayerInput()
+        {
 
+        };
         rb.AddForce(releaseVelocity, ForceMode2D.Impulse);
         rb.AddTorque(paraboleData.rotate, ForceMode2D.Impulse);
+
+
         releaseVelocity = Vector2.zero;
         addForce = 0;
         line1.enabled = false;

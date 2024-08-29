@@ -26,7 +26,7 @@ public class Bomb : MonoBehaviour
 
         if (throwing)
         {
-            print("爆炸了");
+            //print("爆炸了");
             OnExplode();
             explodePosition = transform.position;
         }
@@ -44,8 +44,8 @@ public class Bomb : MonoBehaviour
 
         foreach (Collider2D collider in colliders)
         {
-            print("炸到了 " + collider.name + " " +collider.tag);
-            
+            print("炸到了 " + collider.name + " " + collider.tag);
+
             if (collider.CompareTag("Player"))
             {
   
@@ -57,7 +57,7 @@ public class Bomb : MonoBehaviour
                 //}
                 rb.AddForce(testVector * explodeForce , ForceMode2D.Impulse);
                 rb.AddTorque(1.5f,ForceMode2D.Impulse);
-                print("攻击到了玩家" + rb.name );
+                //print("攻击到了玩家" + rb.name );
             }
         }
         throwing = false;

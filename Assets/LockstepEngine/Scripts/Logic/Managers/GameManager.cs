@@ -5,6 +5,7 @@ using Lockstep.Logic;
 using Lockstep.Math;
 using Lockstep.Util;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 using Debug = Lockstep.Logging.Debug;
 
 
@@ -44,6 +45,8 @@ namespace LockstepTutorial {
         private NetClient netClient;
         private List<UnityBaseManager> _mgrs = new List<UnityBaseManager>();
 
+        public Rigidbody2D bomb;
+
         private static string _traceLogPath {
             get {
 #if UNITY_STANDALONE_OSX
@@ -66,7 +69,8 @@ namespace LockstepTutorial {
             //Screen.SetResolution(1024, 768, false);
             gameObject.AddComponent<PingMono>();
             gameObject.AddComponent<InputMono>();
-
+            Instance = this;
+            
             //_Awake();
         }
 
@@ -75,7 +79,31 @@ namespace LockstepTutorial {
         }
 
         private void Update(){
-            _DoUpdate();
+            if (!_hasStart)
+            {
+                print("游戏未开始");
+                return;
+            }
+
+            remainTime += Time.deltaTime;
+            while (remainTime >= 0.03f)
+            {
+                remainTime -= 0.03f;
+                //send input
+                if (!IsReplay)
+                {
+                    SendInput();
+                }
+
+
+                if (GetFrame(curFrameIdx) == null)
+                {
+                    print("下一帧还未到达");
+                    return;
+                }
+
+                Step();
+            }
         }
 
         private void _Awake(){
@@ -106,30 +134,6 @@ namespace LockstepTutorial {
         }
 
 
-        private void _DoUpdate(){
-            if (!_hasStart)
-            {
-                print("游戏未开始");
-                return;
-            }
-
-            remainTime += Time.deltaTime;
-            while (remainTime >= 0.03f) {
-                remainTime -= 0.03f;
-                //send input
-                if (!IsReplay) {
-                    SendInput();
-                }
-
-
-                if (GetFrame(curFrameIdx) == null) {
-                    return;
-                }
-
-                Step();
-            }
-        }
-
         public static void StartGame(Msg_StartGame msg){
             UnityEngine.Debug.Log("StartGame");
             Instance.StartGame(msg.mapId, msg.playerInfos, msg.localPlayerId);
@@ -137,7 +141,7 @@ namespace LockstepTutorial {
 
         public void StartGame(int mapId, PlayerServerInfo[] playerInfos, int localPlayerId){
 
-            _hasStart = false;
+            _hasStart = true;
 
             curMapId = mapId;
 
@@ -163,6 +167,7 @@ namespace LockstepTutorial {
 
 
         public void SendInput(){
+
             if (IsClientMode) {
                 PushFrameInput(new FrameInput() {
                     tick = curFrameIdx,
@@ -181,6 +186,7 @@ namespace LockstepTutorial {
                 input = playerInput,
                 tick = inputTick
             });
+            print(playerInput.number + "号发送帧向服务器 forceX  :" + playerInput.forceX);
             //UnityEngine.Debug.Log("" + playerInput.inputUV);
             tick2SendTimer[inputTick] = Time.realtimeSinceStartup;
             //UnityEngine.Debug.Log("SendInput " + inputTick);
@@ -189,21 +195,48 @@ namespace LockstepTutorial {
 
 
         private void Step(){
-            UpdateFrameInput();
-            if (IsReplay) {
-                if (curFrameIdx < frames.Count) {
+
+            curFrameInput = GetFrame(curFrameIdx);
+            var frame = curFrameInput;
+            for (int i = 0; i < playerCount; i++)
+            {
+                //print(" i: " + i);
+                //print(frame.inputs[i]);
+                //print(frame.inputs[i].number);
+                //print(frame.inputs[i].forceX);
+                print( $" 收到帧 {frame.inputs[i].number} 的forceX ： " + frame.inputs[i].forceX);
+
+                if (frame.inputs[i].number == localPlayerId)
+                {
+                    if (frame.inputs[i].forceX!=0 || frame.inputs[i].forceY != 0)
+                    {
+                        bomb.AddForce( new Vector2( frame.inputs[i].forceX, frame.inputs[i].forceY));
+                    }
+                }
+            }
+
+
+
+
+            //UpdateFrameInput();
+            if (IsReplay)
+            {
+                if (curFrameIdx < frames.Count)
+                {
                     Replay(curFrameIdx);
                     curFrameIdx++;
                 }
             }
-            else {
-                Recoder();
-                //send hash
-                netClient?.Send(new Msg_HashCode() {
-                    tick = curFrameIdx,
-                    hash = GetHash()
-                });
-                TraceHelper.TraceFrameState();
+            else
+            {
+                //Recoder();
+
+                //netClient?.Send(new Msg_HashCode()
+                //{
+                //    tick = curFrameIdx,
+                //    hash = GetHash()
+                //});
+                //TraceHelper.TraceFrameState();
                 curFrameIdx++;
             }
         }

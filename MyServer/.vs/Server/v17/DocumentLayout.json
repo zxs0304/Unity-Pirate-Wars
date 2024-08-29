@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\zxs\\fork\\Unity-Pirate-Wars\\MyServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0C7FFE73-562F-43BF-BA62-214BAD86348C}|Server\\Src\\SimpleServer\\SimpleServer.csproj|d:\\zxs\\fork\\unity-pirate-wars\\myserver\\server\\src\\simpleserver\\src\\server\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C7FFE73-562F-43BF-BA62-214BAD86348C}|Server\\Src\\SimpleServer\\SimpleServer.csproj|solutionrelative:server\\src\\simpleserver\\src\\server\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C7FFE73-562F-43BF-BA62-214BAD86348C}|Server\\Src\\SimpleServer\\SimpleServer.csproj|d:\\zxs\\fork\\unity-pirate-wars\\myserver\\server\\src\\simpleserver\\src\\server\\messagepacker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C7FFE73-562F-43BF-BA62-214BAD86348C}|Server\\Src\\SimpleServer\\SimpleServer.csproj|solutionrelative:server\\src\\simpleserver\\src\\server\\messagepacker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C7FFE73-562F-43BF-BA62-214BAD86348C}|Server\\Src\\SimpleServer\\SimpleServer.csproj|d:\\zxs\\fork\\unity-pirate-wars\\myserver\\server\\src\\simpleserver\\src\\server\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C7FFE73-562F-43BF-BA62-214BAD86348C}|Server\\Src\\SimpleServer\\SimpleServer.csproj|solutionrelative:server\\src\\simpleserver\\src\\server\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C7FFE73-562F-43BF-BA62-214BAD86348C}|Server\\Src\\SimpleServer\\SimpleServer.csproj|d:\\zxs\\fork\\unity-pirate-wars\\myserver\\server\\src\\simpleserver\\src\\serverlauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C7FFE73-562F-43BF-BA62-214BAD86348C}|Server\\Src\\SimpleServer\\SimpleServer.csproj|solutionrelative:server\\src\\simpleserver\\src\\serverlauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\zxs\\fork\\Unity-Pirate-Wars\\MyServer\\Server\\Src\\SimpleServer\\Src\\Server\\Room.cs",
+              "RelativeDocumentMoniker": "Server\\Src\\SimpleServer\\Src\\Server\\Room.cs",
+              "ToolTip": "D:\\zxs\\fork\\Unity-Pirate-Wars\\MyServer\\Server\\Src\\SimpleServer\\Src\\Server\\Room.cs",
+              "RelativeToolTip": "Server\\Src\\SimpleServer\\Src\\Server\\Room.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAuwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T12:05:08.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MessagePacker.cs",
+              "DocumentMoniker": "D:\\zxs\\fork\\Unity-Pirate-Wars\\MyServer\\Server\\Src\\SimpleServer\\Src\\Server\\MessagePacker.cs",
+              "RelativeDocumentMoniker": "Server\\Src\\SimpleServer\\Src\\Server\\MessagePacker.cs",
+              "ToolTip": "D:\\zxs\\fork\\Unity-Pirate-Wars\\MyServer\\Server\\Src\\SimpleServer\\Src\\Server\\MessagePacker.cs",
+              "RelativeToolTip": "Server\\Src\\SimpleServer\\Src\\Server\\MessagePacker.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T12:05:01.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServerLauncher.cs",
+              "DocumentMoniker": "D:\\zxs\\fork\\Unity-Pirate-Wars\\MyServer\\Server\\Src\\SimpleServer\\Src\\ServerLauncher.cs",
+              "RelativeDocumentMoniker": "Server\\Src\\SimpleServer\\Src\\ServerLauncher.cs",
+              "ToolTip": "D:\\zxs\\fork\\Unity-Pirate-Wars\\MyServer\\Server\\Src\\SimpleServer\\Src\\ServerLauncher.cs",
+              "RelativeToolTip": "Server\\Src\\SimpleServer\\Src\\ServerLauncher.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T12:04:56.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Client.cs",
+              "DocumentMoniker": "D:\\zxs\\fork\\Unity-Pirate-Wars\\MyServer\\Server\\Src\\SimpleServer\\Src\\Server\\Client.cs",
+              "RelativeDocumentMoniker": "Server\\Src\\SimpleServer\\Src\\Server\\Client.cs",
+              "ToolTip": "D:\\zxs\\fork\\Unity-Pirate-Wars\\MyServer\\Server\\Src\\SimpleServer\\Src\\Server\\Client.cs",
+              "RelativeToolTip": "Server\\Src\\SimpleServer\\Src\\Server\\Client.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T12:04:48.117Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
