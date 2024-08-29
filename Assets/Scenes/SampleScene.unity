@@ -18583,7 +18583,7 @@ MonoBehaviour:
   m_Priority: 11
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 3571977198318205933}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 7
@@ -18612,7 +18612,7 @@ Transform:
   m_GameObject: {fileID: 1476953402}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.1, y: -18.8915, z: -10}
+  m_LocalPosition: {x: -8.68, y: -16, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18703,6 +18703,7 @@ MonoBehaviour:
   curFrameIdx: 0
   playerServerInfos: []
   remainTime: 0
+  bomb: {fileID: 4033071898020777505}
 --- !u!114 &1519202479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18873,7 +18874,7 @@ Transform:
   m_GameObject: {fileID: 1986890298}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.1, y: -18.8915, z: -10}
+  m_LocalPosition: {x: -8.68, y: -16, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -45,8 +45,9 @@ namespace LockstepTutorial {
         private NetClient netClient;
         private List<UnityBaseManager> _mgrs = new List<UnityBaseManager>();
 
+        //TEST
         public Rigidbody2D bomb;
-
+ 
         private static string _traceLogPath {
             get {
 #if UNITY_STANDALONE_OSX
@@ -198,21 +199,14 @@ namespace LockstepTutorial {
 
             curFrameInput = GetFrame(curFrameIdx);
             var frame = curFrameInput;
-            for (int i = 0; i < playerCount; i++)
+            for (int i = 0; i < allUsers.Count; i++)
             {
                 //print(" i: " + i);
                 //print(frame.inputs[i]);
                 //print(frame.inputs[i].number);
                 //print(frame.inputs[i].forceX);
                 print( $" 收到帧 {frame.inputs[i].number} 的forceX ： " + frame.inputs[i].forceX);
-
-                if (frame.inputs[i].number == localPlayerId)
-                {
-                    if (frame.inputs[i].forceX!=0 || frame.inputs[i].forceY != 0)
-                    {
-                        bomb.AddForce( new Vector2( frame.inputs[i].forceX, frame.inputs[i].forceY));
-                    }
-                }
+                allUsers[i].HandleInput(frame.inputs[i]);
             }
 
 
