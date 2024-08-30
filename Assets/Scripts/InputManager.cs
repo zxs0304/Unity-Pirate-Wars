@@ -32,7 +32,7 @@ public class InputManager : MonoSingleton<InputManager>
     private void Update()
     {
 
-        //print("几个手指" + Input.touchCount);
+        print("几个手指" + Input.touchCount);
         if (Input.touchCount > 0)
         {
             

@@ -9,12 +9,12 @@ public class User
     public string name;
     public int Id;
     public int localId;
-    public List<Minion> minions = new List<Minion>();
+    public List<GameObject> minions = new List<GameObject>();
     public GameObject testMinion;
-    private PlayerInput myInput;
 
-    public float forceAmount = 5f;
 
+    public float forceAmount = 1f;
+    public float xuanzhuan = 1f;
 
     public void InitUser()
     {
@@ -28,19 +28,26 @@ public class User
             return;
         }
         Vector2 addForce = new Vector2(playerInput.forceX * forceAmount, playerInput.forceY * forceAmount);
+        Debug.Log($"当前client{localId}, minions长度{minions.Count} ,forceX :{playerInput.forceX} ,forceY{playerInput.forceY} ");
+
+        Debug.Log("client : "+localId + " minions[0].transform" + minions[0].transform.position);
 
         minions[0].GetComponent<Rigidbody2D>().AddForce(addForce, ForceMode2D.Impulse);
+        minions[0].GetComponent<Rigidbody2D>().AddTorque(xuanzhuan, ForceMode2D.Impulse);
 
     }
 
     private void SpawnMinions()
     {
-        minions = new List<Minion>();
-        GameObject gb = Resources.Load<GameObject>("Minion");
-        GameObject.Instantiate(gb);
-        gb.transform.position = new Vector2(Random.Range(-5,-8), -16);
-        minions.Add(gb.GetComponent<Minion>());
+        minions = new List<GameObject>();
+        GameObject minion = Resources.Load<GameObject>("Minion");
+        GameObject gb = GameObject.Instantiate(minion);
+        gb.transform.position = new Vector2(Random.Range(-8.5f,-7), -16);
+        gb.name = localId.ToString() ;
+        minions.Add(gb);
+        Debug.Log("minions[0].transform" + minions[0].transform.position);
     }
 
+    
 
 }

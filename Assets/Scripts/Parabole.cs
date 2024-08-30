@@ -28,7 +28,7 @@ public class Parabole : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        text = GameObject.Find("Canvas").GetComponentInChildren<Text>(); ;
     }
 
     private void Start()
@@ -79,14 +79,21 @@ public class Parabole : MonoBehaviour
     public void OnTouchEnded()
     {
         text.text = "OnMouseUp + " + gameObject.name;
-        GameManager.CurGameInput = new PlayerInput()
+
+        //GameManager.CurGameInput = new PlayerInput()
+        //{
+        //    forceX = releaseVelocity.x,
+        //    forceY = releaseVelocity.y,
+        //    number = GameManager.Instance.localPlayerId
+        //};
+        GameManager.Instance.SetInput(new PlayerInput()
         {
-
-        };
-        rb.AddForce(releaseVelocity, ForceMode2D.Impulse);
-        rb.AddTorque(paraboleData.rotate, ForceMode2D.Impulse);
-
-
+            forceX = releaseVelocity.x,
+            forceY = releaseVelocity.y,
+            number = GameManager.Instance.localPlayerId
+        });
+        //rb.AddForce(releaseVelocity, ForceMode2D.Impulse);
+        //rb.AddTorque(paraboleData.rotate, ForceMode2D.Impulse);
         releaseVelocity = Vector2.zero;
         addForce = 0;
         line1.enabled = false;

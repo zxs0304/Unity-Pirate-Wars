@@ -17,7 +17,7 @@ public class InputMono : MonoBehaviour
     //public bool isSpeedUp;
     public Vector2 Force;
     public float Torque;
-
+    public PlayerInput myInput;
 
     void Start()
     {
@@ -28,16 +28,19 @@ public class InputMono : MonoBehaviour
     {
         if (!IsReplay)
         {
+            
 
-
-            GameManager.CurGameInput = new PlayerInput()
-            {
-                forceX = Input.GetAxisRaw("Horizontal"),
-                forceY = Input.GetAxisRaw("Vertical"),
-                number = GameManager.Instance.localPlayerId
-            };
+            //GameManager.CurGameInput = new PlayerInput()
+            //{
+            //    number = GameManager.Instance.localPlayerId
+            //};
 
         }
+    }
+
+    public void GetMyInput()
+    {
+
     }
 
 }

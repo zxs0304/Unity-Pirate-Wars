@@ -281,9 +281,11 @@ GameObject:
   - component: {fileID: 8813919014293021252}
   - component: {fileID: 2172961072352877757}
   - component: {fileID: 7808353275995825442}
+  - component: {fileID: 2890316442461514504}
+  - component: {fileID: -4911932259520986583}
   m_Layer: 0
   m_Name: Minion
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -297,7 +299,7 @@ Transform:
   m_GameObject: {fileID: 2978179530287378329}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.4, y: -9.2, z: 0}
+  m_LocalPosition: {x: -7.408704, y: -16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -443,14 +445,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mousePosition: {x: 0, y: 0}
-  line1: {fileID: 0}
-  line2: {fileID: 0}
+  line1: {fileID: 7311961658644265761}
+  line2: {fileID: 7192987458093608672}
   line2Num: 2
   addForce: 0
   releaseVelocity: {x: 0, y: 0}
-  dragPoint: {fileID: 0}
+  dragPoint: {fileID: 7380257791607951963}
   paraboleData: {fileID: 11400000, guid: 12649833ad8c0534497f8d5eb68033bc, type: 2}
   text: {fileID: 0}
+--- !u!114 &2890316442461514504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978179530287378329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f4889b9453bc5489f76a9aefcc05fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 0
+  currentHP: 0
+--- !u!114 &-4911932259520986583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978179530287378329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e4e4f9bd1bdb54ca8e749234b99c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwing: 0
+  explodeRadius: 8
+  explodeForce: 10
+  explodePosition: {x: 0, y: 0}
+  testVector: {x: 0, y: 0}
 --- !u!1 &7380257791607951963
 GameObject:
   m_ObjectHideFlags: 0

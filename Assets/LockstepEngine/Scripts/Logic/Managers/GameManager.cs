@@ -4,6 +4,7 @@ using Lockstep.Collision2D;
 using Lockstep.Logic;
 using Lockstep.Math;
 using Lockstep.Util;
+using Unity.VisualScripting;
 using UnityEngine;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 using Debug = Lockstep.Logging.Debug;
@@ -25,7 +26,7 @@ namespace LockstepTutorial {
         private bool _hasStart = false;
         [HideInInspector] public int predictTickCount = 3;
         [HideInInspector] public int inputTick;
-        [HideInInspector] public int localPlayerId = 0;
+        public int localPlayerId = 0;
         [HideInInspector] public int playerCount = 1;
         [HideInInspector] public int curMapId = 0;
         public int curFrameIdx = 0;
@@ -47,7 +48,8 @@ namespace LockstepTutorial {
 
         //TEST
         public Rigidbody2D bomb;
- 
+        public float Test = 5f;
+
         private static string _traceLogPath {
             get {
 #if UNITY_STANDALONE_OSX
@@ -61,6 +63,8 @@ namespace LockstepTutorial {
 
         public static List<User> allUsers = new List<User>();
         public static User MyUser;
+        private bool haveInput = false;
+
 
         public void RegisterManagers(UnityBaseManager mgr){
             _mgrs.Add(mgr);
@@ -79,7 +83,8 @@ namespace LockstepTutorial {
             _Start();
         }
 
-        private void Update(){
+        private void LateUpdate()
+        {
             if (!_hasStart)
             {
                 print("游戏未开始");
@@ -93,9 +98,12 @@ namespace LockstepTutorial {
                 //send input
                 if (!IsReplay)
                 {
+                  
                     SendInput();
+     
                 }
 
+             
 
                 if (GetFrame(curFrameIdx) == null)
                 {
@@ -106,6 +114,35 @@ namespace LockstepTutorial {
                 Step();
             }
         }
+
+        private void Update(){
+            //if (!_hasStart)
+            //{
+            //    print("游戏未开始");
+            //    return;
+            //}
+
+            //remainTime += Time.deltaTime;
+            //while (remainTime >= 0.03f)
+            //{
+            //    remainTime -= 0.03f;
+            //    //send input
+            //    if (!IsReplay)
+            //    {
+            //        SendInput();
+            //    }
+
+
+            //    if (GetFrame(curFrameIdx) == null)
+            //    {
+            //        print("下一帧还未到达");
+            //        return;
+            //    }
+
+            //    Step();
+            //}
+        }
+
 
         private void _Awake(){
 //#if !UNITY_EDITOR
@@ -182,12 +219,22 @@ namespace LockstepTutorial {
                 return;
             }
 
+            if (!haveInput)
+            {
+                CurGameInput = new PlayerInput() { number = localPlayerId };
+            }
+            else
+            {
+                print("CurGameInput已经赋值 " + CurGameInput);
+            }
             var playerInput = CurGameInput;
             netClient?.Send(new Msg_PlayerInput() {
                 input = playerInput,
                 tick = inputTick
             });
-            print(playerInput.number + "号发送帧向服务器 forceX  :" + playerInput.forceX);
+
+            haveInput = false;
+            //print(playerInput.number + "号发送帧向服务器 forceX  :" + playerInput.forceX);
             //UnityEngine.Debug.Log("" + playerInput.inputUV);
             tick2SendTimer[inputTick] = Time.realtimeSinceStartup;
             //UnityEngine.Debug.Log("SendInput " + inputTick);
@@ -205,8 +252,20 @@ namespace LockstepTutorial {
                 //print(frame.inputs[i]);
                 //print(frame.inputs[i].number);
                 //print(frame.inputs[i].forceX);
-                print( $" 收到帧 {frame.inputs[i].number} 的forceX ： " + frame.inputs[i].forceX);
+                print( $" 收到帧 {frame.inputs[i].number} 的帧{frame.inputs[i]}");
                 allUsers[i].HandleInput(frame.inputs[i]);
+                //print($" allUsers[{i}].localId :" + allUsers[i].localId);
+                //print($"frame.inputs[{i}].number :" + frame.inputs[i].number);
+                //print(" bomb.transform0 " + bomb.transform.position);
+                //if (frame.inputs[i].number == localPlayerId)
+                //{
+                //    //print(" bomb.transform1 " + bomb.transform.position);
+                //    bomb.AddForce(new Vector2(frame.inputs[i].forceX * Test, frame.inputs[i].forceY * Test), ForceMode2D.Impulse);
+
+                //    //Rigidbody2D rb =  allUsers[i].minions[0].GetComponent<Rigidbody2D>();
+                //    //rb.AddForce(new Vector2(frame.inputs[i].forceX * Test, frame.inputs[i].forceY * Test), ForceMode2D.Impulse);
+                //}
+
             }
 
 
@@ -354,5 +413,13 @@ namespace LockstepTutorial {
 
             return hash;
         }
+
+        public void SetInput(PlayerInput input)
+        {
+            CurGameInput = input;
+            haveInput = true;
+        }
+        
+
     }
 }
