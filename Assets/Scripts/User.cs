@@ -14,7 +14,7 @@ public class User
 
 
     public float forceAmount = 1f;
-    public float xuanzhuan = 1f;
+    public float xuanzhuan = 6f;
 
     public void InitUser()
     {
@@ -39,8 +39,9 @@ public class User
     private void SpawnMinions()
     {
         minions = new List<GameObject>();
-        GameObject minion = Resources.Load<GameObject>("Minion");
+        GameObject minion = Resources.Load<GameObject>("Minion1");
         GameObject gb = GameObject.Instantiate(minion);
+        
         gb.transform.position = new Vector2(Random.Range(-8.5f,-7), -16);
         gb.name = localId.ToString() ;
         minions.Add(gb);
