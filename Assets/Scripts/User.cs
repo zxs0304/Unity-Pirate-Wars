@@ -28,9 +28,8 @@ public class User
             return;
         }
         Vector2 addForce = new Vector2(playerInput.forceX * forceAmount, playerInput.forceY * forceAmount);
-        Debug.Log($"当前client{localId}, minions长度{minions.Count} ,forceX :{playerInput.forceX} ,forceY{playerInput.forceY} ");
-
-        Debug.Log("client : "+localId + " minions[0].transform" + minions[0].transform.position);
+        //Debug.Log($"当前client{localId}, minions长度{minions.Count} ,forceX :{playerInput.forceX} ,forceY{playerInput.forceY} ");
+        //Debug.Log("client : "+localId + " minions[0].transform" + minions[0].transform.position);
 
         minions[0].GetComponent<Rigidbody2D>().AddForce(addForce, ForceMode2D.Impulse);
         minions[0].GetComponent<Rigidbody2D>().AddTorque(xuanzhuan, ForceMode2D.Impulse);

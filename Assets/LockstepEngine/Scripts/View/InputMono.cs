@@ -2,6 +2,7 @@ using Lockstep.Collision2D;
 using Lockstep.Logic;
 using Lockstep.Math;
 using LockstepTutorial;
+using System;
 using UnityEngine;
 
 public class InputMono : MonoBehaviour
@@ -28,7 +29,10 @@ public class InputMono : MonoBehaviour
     {
         if (!IsReplay)
         {
-            
+
+
+
+
 
             //GameManager.CurGameInput = new PlayerInput()
             //{

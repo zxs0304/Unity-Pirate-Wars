@@ -1,6 +1,9 @@
+using System;
 using System.Net;
 using Lockstep.Network;
 using LockstepTutorial;
+using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace Lockstep.Logic{
     public class NetClient : IMessageDispatcher {
@@ -37,7 +40,9 @@ namespace Lockstep.Logic{
 
         public void OnFrameInput(Session session, IMessage message){
             var msg = message as Msg_FrameInput;
+
             GameManager.PushFrameInput(msg.input);
+            Debug.Log($"{DateTime.Now:HH:mm:ss.fff} , {GameManager.Instance.localPlayerId}ºÅ ÍøÂçÊÕµ½µÚ{msg.input.tick}Ö¡ ");
         }
 
         public void OnStartGame(Session session, IMessage message){

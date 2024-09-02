@@ -15,7 +15,7 @@ namespace LockstepTutorial {
         public static GameManager Instance { get; private set; }
         public static PlayerInput CurGameInput = new PlayerInput();
 
-        [Header("ClientMode")] public bool IsClientMode;
+        [Header("ClientMode")] public bool IsClientMode = false;
         public PlayerServerInfo ClientModeInfo = new PlayerServerInfo();
 
         [Header("Recorder")] public bool IsReplay = false;
@@ -107,7 +107,7 @@ namespace LockstepTutorial {
 
                 if (GetFrame(curFrameIdx) == null)
                 {
-                    print("下一帧还未到达");
+                    print($"第{curFrameIdx}帧，还未到达");
                     return;
                 }
 
@@ -221,10 +221,12 @@ namespace LockstepTutorial {
 
             if (!haveInput)
             {
+
                 CurGameInput = new PlayerInput() { number = localPlayerId };
             }
             else
             {
+
                 print("CurGameInput已经赋值 " + CurGameInput);
             }
             var playerInput = CurGameInput;
@@ -232,7 +234,7 @@ namespace LockstepTutorial {
                 input = playerInput,
                 tick = inputTick
             });
-
+            print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 发送第{inputTick}帧{CurGameInput.forceX}  ");
             haveInput = false;
             //print(playerInput.number + "号发送帧向服务器 forceX  :" + playerInput.forceX);
             //UnityEngine.Debug.Log("" + playerInput.inputUV);
@@ -252,7 +254,7 @@ namespace LockstepTutorial {
                 //print(frame.inputs[i]);
                 //print(frame.inputs[i].number);
                 //print(frame.inputs[i].forceX);
-                print( $" 收到帧 {frame.inputs[i].number} 的帧{frame.inputs[i]}");
+                print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 收到第{curFrameIdx}帧 : {frame.inputs[0].forceX} ; {frame.inputs[1].forceX}   ");
                 allUsers[i].HandleInput(frame.inputs[i]);
                 //print($" allUsers[{i}].localId :" + allUsers[i].localId);
                 //print($"frame.inputs[{i}].number :" + frame.inputs[i].number);
@@ -416,8 +418,10 @@ namespace LockstepTutorial {
 
         public void SetInput(PlayerInput input)
         {
+
             CurGameInput = input;
             haveInput = true;
+            print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 设置帧{CurGameInput.forceX}  ");
         }
         
 

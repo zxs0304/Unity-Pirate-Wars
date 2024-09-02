@@ -55,6 +55,7 @@ namespace Lockstep.FakeServer {
         }
 
         private void BoardInputMsg(int tick, PlayerInput[] inputs){
+            Console.WriteLine($"{DateTime.Now:HH:mm:ss.fff} , 分发第{tick}帧  ");
             var frame = new Msg_FrameInput();
             frame.input = new FrameInput() {
                 tick = tick,
@@ -98,7 +99,8 @@ namespace Lockstep.FakeServer {
                 inputs = new PlayerInput[MaxPlayerCount];
                 _tick2Inputs.Add(msg.tick, inputs);
             }
-            Console.WriteLine($"服务器收到帧 useID{useId} localId{localId} inputs{msg.input}");
+            Console.WriteLine($"{DateTime.Now:HH:mm:ss.fff} , {localId}号 收到第{msg.tick}帧{msg.input.forceX}  ");
+            //Console.WriteLine($"服务器收到帧 useID{useId} localId{localId} inputs{msg.input}");
             inputs[localId] = msg.input;
             CheckInput();
         }
