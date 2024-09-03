@@ -90,7 +90,7 @@ public class Parabole : MonoBehaviour
         {
             forceX = releaseVelocity.x,
             forceY = releaseVelocity.y,
-            number = GameManager.Instance.localPlayerId
+            number = 0
         });
         //rb.AddForce(releaseVelocity, ForceMode2D.Impulse);
         //rb.AddTorque(paraboleData.rotate, ForceMode2D.Impulse);

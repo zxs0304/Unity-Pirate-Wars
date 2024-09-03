@@ -264,23 +264,10 @@ namespace LockstepTutorial {
             var frame = curFrameInput;
             for (int i = 0; i < allUsers.Count; i++)
             {
-                //print(" i: " + i);
-                //print(frame.inputs[i]);
-                //print(frame.inputs[i].number);
-                //print(frame.inputs[i].forceX);
-                print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 收到第{curFrameIdx}帧 : {frame.inputs[0].forceX}  ");
-                allUsers[i].HandleInput(frame.inputs[i]);
-                //print($" allUsers[{i}].localId :" + allUsers[i].localId);
-                //print($"frame.inputs[{i}].number :" + frame.inputs[i].number);
-                //print(" bomb.transform0 " + bomb.transform.position);
-                //if (frame.inputs[i].number == localPlayerId)
-                //{
-                //    //print(" bomb.transform1 " + bomb.transform.position);
-                //    bomb.AddForce(new Vector2(frame.inputs[i].forceX * Test, frame.inputs[i].forceY * Test), ForceMode2D.Impulse);
 
-                //    //Rigidbody2D rb =  allUsers[i].minions[0].GetComponent<Rigidbody2D>();
-                //    //rb.AddForce(new Vector2(frame.inputs[i].forceX * Test, frame.inputs[i].forceY * Test), ForceMode2D.Impulse);
-                //}
+                //print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 收到第{curFrameIdx}帧 : {frame.inputs[0].forceX}  ");
+                allUsers[i].HandleInput(frame.inputs[i]);
+
 
             }
 

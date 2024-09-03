@@ -10,7 +10,7 @@ public class User
     public string name;
     public int Id;
     public int localId;
-    public List<GameObject> minions = new List<GameObject>();
+    public List<Minion> minions = new List<Minion>();
     public GameObject testMinion;
 
 
@@ -32,22 +32,29 @@ public class User
         //Debug.Log($"当前client{localId}, minions长度{minions.Count} ,forceX :{playerInput.forceX} ,forceY{playerInput.forceY} ");
         //Debug.Log("client : "+localId + " minions[0].transform" + minions[0].transform.position);
         
-        minions[0].GetComponent<Rigidbody2D>().AddForce(addForce, ForceMode2D.Impulse);
+        if(playerInput.number > -1)//扔炸弹操作
+        {
+            minions[playerInput.number].ThrowBomb(addForce);
+        }
+        else//小人跳跃操作
+        {
+            minions[playerInput.number].Jump(addForce);
+        }
+        //minions[0].GetComponent<Rigidbody2D>().AddForce(addForce, ForceMode2D.Impulse);
         
-        minions[0].GetComponent<Rigidbody2D>().AddTorque(GameManager.Instance.Testxuanzhuan * -addForce.normalized.x, ForceMode2D.Impulse);
+        //minions[0].GetComponent<Rigidbody2D>().AddTorque(GameManager.Instance.Testxuanzhuan * -addForce.normalized.x, ForceMode2D.Impulse);
 
     }
 
     private void SpawnMinions()
     {
-        minions = new List<GameObject>();
         GameObject minion = Resources.Load<GameObject>("Minion1");
         GameObject gb = GameObject.Instantiate(minion);
         
         gb.transform.position = new Vector2(Random.Range(-8.5f,-7), -16);
         gb.name = localId.ToString() ;
-        minions.Add(gb);
-        Debug.Log("minions[0].transform" + minions[0].transform.position);
+        minions.Add(gb.GetComponent<Minion>());
+
     }
 
     

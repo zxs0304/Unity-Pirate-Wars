@@ -67,7 +67,7 @@ namespace Lockstep.Logic {
         //public int skillId;
         //public bool isSpeedUp;
         //public bool getMouseDown;
-        public int number;
+        public int number;// -1表示玩家跳跃，其余表示扔炸弹的小人的号
         public float forceX;
         public float forceY;
 

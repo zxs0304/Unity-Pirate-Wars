@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ItemParaboleData
   m_EditorClassIdentifier: 
   name: Item
-  line1Num: 10
+  line1Num: 8
   maxForce: 3
-  fixedForce: 5.4
+  fixedForce: 6
   gravityForce: 2
   rotate: 1
   pointsGap: 0.12
