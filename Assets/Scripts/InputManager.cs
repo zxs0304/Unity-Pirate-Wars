@@ -12,6 +12,7 @@ public class InputManager : MonoSingleton<InputManager>
     public Touch movePlayerTouch;
     public RaycastHit2D hit;
     public Parabole currentParabole = null;
+    public bool canDrag = false;
 
     //TEST
     public Vector2 currentDealtaPosition;
@@ -76,9 +77,21 @@ public class InputManager : MonoSingleton<InputManager>
         else if (hit.collider != null && (hit.collider.CompareTag("Player") || hit.collider.CompareTag("Bomb")) && movePlayerTouch.fingerId == -1)
         {
             //print("µ„µΩ¡À " + hit.collider.name);
-            movePlayerTouch = touch;
-            currentParabole = hit.collider.GetComponent<Parabole>();
-            currentParabole.OnTouchBegan();
+
+            if (canDrag)
+            {
+                movePlayerTouch = touch;
+                currentParabole = hit.collider.GetComponent<Parabole>();
+                currentParabole.OnTouchBegan();
+                canDrag = false;
+            }
+            else
+            {
+                Minion minion = hit.collider.GetComponent<Minion>();
+                minion.SpawnBomb();
+                canDrag = true;
+            }
+
         }
     }
 

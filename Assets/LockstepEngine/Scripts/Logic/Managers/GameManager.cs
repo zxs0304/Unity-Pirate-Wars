@@ -46,9 +46,11 @@ namespace LockstepTutorial {
         private NetClient netClient;
         private List<UnityBaseManager> _mgrs = new List<UnityBaseManager>();
 
+        public int currentRound = 0; //当前是哪个玩家的回合
+
         //TEST
         public Rigidbody2D bomb;
-        public float Test = 5f;
+        public float Testxuanzhuan = 3f;
 
         private static string _traceLogPath {
             get {
@@ -207,6 +209,18 @@ namespace LockstepTutorial {
         public void SendInput(){
 
             if (IsClientMode) {
+
+                if (!haveInput)
+                {
+                    CurGameInput = new PlayerInput() { number = localPlayerId };
+                }
+                else
+                {
+
+                    print("CurGameInput已经赋值 " + CurGameInput);
+                }
+                haveInput = false;
+
                 PushFrameInput(new FrameInput() {
                     tick = curFrameIdx,
                     inputs = new PlayerInput[] {CurGameInput}
@@ -254,7 +268,7 @@ namespace LockstepTutorial {
                 //print(frame.inputs[i]);
                 //print(frame.inputs[i].number);
                 //print(frame.inputs[i].forceX);
-                print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 收到第{curFrameIdx}帧 : {frame.inputs[0].forceX} ; {frame.inputs[1].forceX}   ");
+                print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 收到第{curFrameIdx}帧 : {frame.inputs[0].forceX}  ");
                 allUsers[i].HandleInput(frame.inputs[i]);
                 //print($" allUsers[{i}].localId :" + allUsers[i].localId);
                 //print($"frame.inputs[{i}].number :" + frame.inputs[i].number);

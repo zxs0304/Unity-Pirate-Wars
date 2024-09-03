@@ -99,6 +99,7 @@ public class Parabole : MonoBehaviour
         line1.enabled = false;
         line2.enabled = false;
         dragPoint.SetActive(false);
+
         if (CompareTag("Bomb"))
         {
             GetComponent<Bomb>().throwing = true;

@@ -1,5 +1,6 @@
 
 using Lockstep.Logic;
+using LockstepTutorial;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ public class User
 
 
     public float forceAmount = 1f;
-    public float xuanzhuan = 6f;
+    public float xuanzhuan = 3f;
 
     public void InitUser()
     {
@@ -30,9 +31,10 @@ public class User
         Vector2 addForce = new Vector2(playerInput.forceX * forceAmount, playerInput.forceY * forceAmount);
         //Debug.Log($"当前client{localId}, minions长度{minions.Count} ,forceX :{playerInput.forceX} ,forceY{playerInput.forceY} ");
         //Debug.Log("client : "+localId + " minions[0].transform" + minions[0].transform.position);
-
+        
         minions[0].GetComponent<Rigidbody2D>().AddForce(addForce, ForceMode2D.Impulse);
-        minions[0].GetComponent<Rigidbody2D>().AddTorque(xuanzhuan, ForceMode2D.Impulse);
+        
+        minions[0].GetComponent<Rigidbody2D>().AddTorque(GameManager.Instance.Testxuanzhuan * -addForce.normalized.x, ForceMode2D.Impulse);
 
     }
 

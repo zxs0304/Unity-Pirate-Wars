@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.17999999, y: 0.17999999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 405412483225110612}
@@ -366,11 +366,10 @@ GameObject:
   - component: {fileID: 2784625990671664594}
   - component: {fileID: 4222062079475210413}
   - component: {fileID: 231207722309885715}
-  - component: {fileID: 5273810582415441523}
   - component: {fileID: 4710181961458487734}
   m_Layer: 0
   m_Name: Minion1
-  m_TagString: Bomb
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,7 +383,7 @@ Transform:
   m_GameObject: {fileID: 8294608927145432871}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.72, y: -16, z: 0}
+  m_LocalPosition: {x: -9.696, y: -16.043, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -444,7 +443,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &7898513321902717707
 Rigidbody2D:
   serializedVersion: 4
@@ -481,7 +480,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 8294608927145432871}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ddee8bcf39850d546929f89e7b1a8a60, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -552,23 +551,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 0
   currentHP: 0
---- !u!114 &5273810582415441523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8294608927145432871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e4e4f9bd1bdb54ca8e749234b99c32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwing: 0
-  explodeRadius: 8
-  explodeForce: 10
-  explodePosition: {x: 0, y: 0}
-  testVector: {x: 0, y: 0}
+  correctionFactor: 35
+  bomb: {fileID: 5127104832769906832, guid: 4768ec66a6146d7479932f317d6ef5df, type: 3}
 --- !u!95 &4710181961458487734
 Animator:
   serializedVersion: 5

@@ -166,7 +166,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 100613091}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b678334e0e20ef49befdd14d6de397d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -971,7 +971,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 584776791}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b678334e0e20ef49befdd14d6de397d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5184,7 +5184,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 669768349}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b678334e0e20ef49befdd14d6de397d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -18680,7 +18680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82588a774d04874bc51bbb78ed293a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsClientMode: 0
+  IsClientMode: 1
   ClientModeInfo:
     name: 
     Id: 0
@@ -18703,8 +18703,9 @@ MonoBehaviour:
   curFrameIdx: 0
   playerServerInfos: []
   remainTime: 0
+  currentRound: 0
   bomb: {fileID: 0}
-  Test: 5
+  Testxuanzhuan: 3
 --- !u!114 &1519202479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18719,6 +18720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveScreenSpeed: 0
   currentParabole: {fileID: 0}
+  canDrag: 0
   currentDealtaPosition: {x: 0, y: 0}
   text: {fileID: 826731004}
 --- !u!1 &1843358699
