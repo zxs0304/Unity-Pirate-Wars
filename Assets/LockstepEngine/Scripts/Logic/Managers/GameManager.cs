@@ -4,9 +4,7 @@ using Lockstep.Collision2D;
 using Lockstep.Logic;
 using Lockstep.Math;
 using Lockstep.Util;
-using Unity.VisualScripting;
 using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 using Debug = Lockstep.Logging.Debug;
 
 
@@ -26,7 +24,7 @@ namespace LockstepTutorial {
         private bool _hasStart = false;
         [HideInInspector] public int predictTickCount = 3;
         [HideInInspector] public int inputTick;
-        public int localPlayerId = 0;
+        public short localPlayerId = 0;
         [HideInInspector] public int playerCount = 1;
         [HideInInspector] public int curMapId = 0;
         public int curFrameIdx = 0;
@@ -48,9 +46,11 @@ namespace LockstepTutorial {
 
         public int currentRound = 0; //当前是哪个玩家的回合
 
+        public Transform[] minionSpawnPoint;
         //TEST
         public Rigidbody2D bomb;
         public float Testxuanzhuan = 3f;
+
 
         private static string _traceLogPath {
             get {
@@ -109,7 +109,7 @@ namespace LockstepTutorial {
 
                 if (GetFrame(curFrameIdx) == null)
                 {
-                    print($"第{curFrameIdx}帧，还未到达");
+                    //print($"第{curFrameIdx}帧，还未到达");
                     return;
                 }
 
@@ -187,7 +187,7 @@ namespace LockstepTutorial {
 
             this.playerCount = playerInfos.Length;
             this.playerServerInfos = playerInfos;
-            this.localPlayerId = localPlayerId;
+            this.localPlayerId = (short)localPlayerId;
             Debug.TraceSavePath = _traceLogPath;
             //allPlayers.Clear();
             allUsers.Clear();
@@ -236,7 +236,7 @@ namespace LockstepTutorial {
             if (!haveInput)
             {
 
-                CurGameInput = new PlayerInput() { number = localPlayerId };
+                CurGameInput = new PlayerInput() { number = -999 };
             }
             else
             {
@@ -248,7 +248,7 @@ namespace LockstepTutorial {
                 input = playerInput,
                 tick = inputTick
             });
-            print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 发送第{inputTick}帧{CurGameInput.forceX}  ");
+            //print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 发送第{inputTick}帧{CurGameInput.forceX}  ");
             haveInput = false;
             //print(playerInput.number + "号发送帧向服务器 forceX  :" + playerInput.forceX);
             //UnityEngine.Debug.Log("" + playerInput.inputUV);
@@ -268,7 +268,7 @@ namespace LockstepTutorial {
                 //print(frame.inputs[i]);
                 //print(frame.inputs[i].number);
                 //print(frame.inputs[i].forceX);
-                print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 收到第{curFrameIdx}帧 : {frame.inputs[0].forceX}  ");
+                //print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 收到第{curFrameIdx}帧 : {frame.inputs[0].forceX}  ");
                 allUsers[i].HandleInput(frame.inputs[i]);
                 //print($" allUsers[{i}].localId :" + allUsers[i].localId);
                 //print($"frame.inputs[{i}].number :" + frame.inputs[i].number);
@@ -435,9 +435,28 @@ namespace LockstepTutorial {
 
             CurGameInput = input;
             haveInput = true;
-            print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 设置帧{CurGameInput.forceX}  ");
+            print($"{DateTime.Now:HH:mm:ss.fff} , {localPlayerId}号 设置帧{CurGameInput}  ");
         }
-        
+
+        public void SwitchRound()
+        {
+
+
+            currentRound++;
+            currentRound %= 2;
+
+        }
+        public bool IsMyRound()
+        {
+            return currentRound == localPlayerId;
+
+        }
+
+        internal void FinishMyOperation()
+        {
+            //此时是共同播放动画的时间，谁都不可以执行操作
+            
+        }
 
     }
 }

@@ -41,7 +41,7 @@ namespace LockstepTutorial {
             var reader = new Deserializer(bytes);
             var recoderFileVersion = reader.ReadInt32();
             mgr.playerCount = reader.ReadInt32();
-            mgr.localPlayerId = reader.ReadInt32();
+            mgr.localPlayerId = reader.ReadInt16();//ÏÈ¸Ä³Éshort
             mgr.playerServerInfos = reader.ReadArray(mgr.playerServerInfos);
 
             var count = reader.ReadInt32();

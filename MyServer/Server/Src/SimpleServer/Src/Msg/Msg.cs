@@ -68,7 +68,7 @@ public class PlayerServerInfo : BaseFormater {
 public class PlayerInput : BaseFormater
 {
 
-    public int number;
+    public short number;
     public float forceX;
     public float forceY;
 
@@ -84,7 +84,7 @@ public class PlayerInput : BaseFormater
 
     public override void Deserialize(Deserializer reader)
     {
-        number = reader.ReadInt32();
+        number = reader.ReadInt16();
         forceX = reader.ReadSingle();
         forceY = reader.ReadSingle();
 
