@@ -1,4 +1,7 @@
 using Cinemachine;
+using JetBrains.Annotations;
+using Lockstep.Logic;
+using LockstepTutorial;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +16,7 @@ public class InputManager : MonoSingleton<InputManager>
     public RaycastHit2D hit;
     public Parabole currentParabole = null;
     public bool canDrag = false;
+    public bool canOperate = true;
 
     //TEST
     public Vector2 currentDealtaPosition;
@@ -66,31 +70,51 @@ public class InputManager : MonoSingleton<InputManager>
 
     public void RegisterTouch(Touch touch) //根据点击那刻点到的物体 来判断此次点击是要拖动屏幕还是拖动玩家
     {
+        if (!canOperate) //若是播动画的时间，大家都不可操作小人也不可滑动屏幕
+        {
+            print("CantOperate");
+            return;
+        }
         myray = Camera.main.ScreenPointToRay(touch.position);
         hit = Physics2D.Raycast(myray.origin, myray.direction, 20f);
         print(hit.collider);
         if (hit.collider == null && moveScreenTouch.fingerId == -1)
         {
-            //print("什么都没点到");
+
             moveScreenTouch = touch;
         }
         else if (hit.collider != null && (hit.collider.CompareTag("Player") || hit.collider.CompareTag("Bomb")) && movePlayerTouch.fingerId == -1)
         {
+            if (!GameManager.Instance.IsMyRound() )
+            {
+                print("NotMyRound");
+                return;
+            }
             //print("点到了 " + hit.collider.name);
 
-            if (canDrag)
+            if (!canDrag)
+            {
+                
+                Minion minion = hit.collider.GetComponent<Minion>();
+                if(minion.userId != GameManager.Instance.localPlayerId)
+                {
+                    print("选择的小人不是属于你的");
+                    return;
+                }
+
+                PlayerInput input = new PlayerInput { number = (short)(minion.minionNumber + 100) }; //生成炸弹的操作码
+                GameManager.Instance.SetInput(input);
+                canDrag = true;
+            }
+            else
             {
                 movePlayerTouch = touch;
                 currentParabole = hit.collider.GetComponent<Parabole>();
                 currentParabole.OnTouchBegan();
                 canDrag = false;
             }
-            else
-            {
-                Minion minion = hit.collider.GetComponent<Minion>();
-                minion.SpawnBomb();
-                canDrag = true;
-            }
+
+         
 
         }
     }
@@ -100,7 +124,7 @@ public class InputManager : MonoSingleton<InputManager>
         if (touch.fingerId == moveScreenTouch.fingerId)
         {
             //移动屏幕
-            //moveScreenTouch = touch;
+
             transform.Translate(-touch.deltaPosition * moveScreenSpeed);
             if (transform.position.x < -62.67f || transform.position.x > -1.12f || transform.position.y < -27.7f || transform.position.y > -7.5f)
             {
@@ -109,7 +133,7 @@ public class InputManager : MonoSingleton<InputManager>
         }
         else if (touch.fingerId == movePlayerTouch.fingerId)
         {
-            //movePlayerTouch = touch;
+
             Vector2 mousePosition =  Camera.main.ScreenToWorldPoint(touch.position);
 
             currentParabole.OnTouchDrag(mousePosition);
@@ -128,6 +152,11 @@ public class InputManager : MonoSingleton<InputManager>
             currentParabole.OnTouchEnded();
             currentParabole = null;
         }
+    }
+
+    public void StopOperate()//禁止与启用玩家的拖屛和小人操作，进入动画时间的时候使用
+    {
+        canOperate = false;
     }
 
 

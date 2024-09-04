@@ -5,21 +5,14 @@ using UnityEngine.UIElements;
 
 public class Bomb : MonoBehaviour
 {
+    public short minionNumber;
     private Rigidbody2D rb;
     public bool throwing = false;
     public float explodeRadius =8f;
     public float explodeForce = 10f;
     public Vector2 explodePosition ;
     public Vector2 testVector;
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
+   
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -33,10 +26,6 @@ public class Bomb : MonoBehaviour
 
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-
-    }
 
     public void OnExplode()
     {
@@ -61,8 +50,16 @@ public class Bomb : MonoBehaviour
             }
         }
         throwing = false;
-        //Destroy(gameObject);
+
+
+        InputManager.Instance.canOperate = true;
+        CameraManager.Instance.ActivateMovedCamera(transform);
+
+        Destroy(gameObject);
+
     }
+
+    
 
     private void OnDrawGizmos()
     {

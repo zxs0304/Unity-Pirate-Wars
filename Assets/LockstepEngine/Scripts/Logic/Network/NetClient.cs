@@ -42,7 +42,7 @@ namespace Lockstep.Logic{
             var msg = message as Msg_FrameInput;
 
             GameManager.PushFrameInput(msg.input);
-            Debug.Log($"{DateTime.Now:HH:mm:ss.fff} , {GameManager.Instance.localPlayerId}号 网络收到第{msg.input.tick}帧 ");
+            //Debug.Log($"{DateTime.Now:HH:mm:ss.fff} , {GameManager.Instance.localPlayerId}号 网络收到第{msg.input.tick}帧 ");
         }
 
         public void OnStartGame(Session session, IMessage message){

@@ -1,23 +1,36 @@
 using Cinemachine;
+using LockstepTutorial;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraManager : MonoSingleton<CameraManager>
 {
-    public CinemachineVirtualCamera mainCamera;
-    public Transform character;
+    public CinemachineVirtualCamera movedCamera;
+    public CinemachineVirtualCamera fixedCamera;
     public float moveSpeed = 0.1f;
 
-    public void SetCameraFollow(Transform transform)
+    public void FixedCameraFollow(Transform transform)
     {
-        mainCamera.Follow = transform;
+        fixedCamera.Follow = transform;
 
     }
 
+    public void ActivateFixedCamera()
+    {
+        fixedCamera.Priority = 12;
+    }
+
+    public void ActivateMovedCamera(Transform transform)
+    {
+        this.transform.position = transform.position;
+        fixedCamera.Priority = 10;
+    }
+
+
     public void MoveCameraPosition(Vector2 vector2 )
     {
-        mainCamera.transform.Translate(vector2.normalized * moveSpeed);
+
 
     }
     
