@@ -90,24 +90,23 @@ public class InputManager : MonoSingleton<InputManager>
                 print("NotMyRound");
                 return;
             }
-            //print("点到了 " + hit.collider.name);
+
+            Minion minion = hit.collider.GetComponent<Minion>();
+            if (minion !=  null &&  minion.userId != GameManager.Instance.localPlayerId) //minion为null时说明是像拖动炸弹，不会return
+            {
+                print("选择的小人不是属于你的");
+                return;
+            }
 
             if (!canDrag)
             {
                 
-                Minion minion = hit.collider.GetComponent<Minion>();
-                if(minion.userId != GameManager.Instance.localPlayerId)
-                {
-                    print("选择的小人不是属于你的");
-                    return;
-                }
+                MenuPanel.Instance.ShowPanel(minion.minionNumber);
 
-                PlayerInput input = new PlayerInput { number = (short)(minion.minionNumber + 100) }; //生成炸弹的操作码
-                GameManager.Instance.SetInput(input);
-                canDrag = true;
             }
             else
             {
+
                 movePlayerTouch = touch;
                 currentParabole = hit.collider.GetComponent<Parabole>();
                 currentParabole.OnTouchBegan();

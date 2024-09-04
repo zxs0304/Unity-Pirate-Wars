@@ -66,8 +66,10 @@ namespace Lockstep.Logic {
         //public bool isInputFire;
         //public int skillId;
         //public bool isSpeedUp;
-        //public bool getMouseDown;
-        public int number;// -1表示玩家跳跃，其余表示扔炸弹的小人的号
+
+        //public short operate; //操作号,0表示生成炸弹，1表示操作小人
+        public short number; //1~10表示几号小人跳，-1~-10表示几号小人扔炸弹,101~110表示几号小人生成炸弹,-999表示无操作
+
         public float forceX;
         public float forceY;
 
@@ -81,7 +83,7 @@ namespace Lockstep.Logic {
         }
 
         public override void Deserialize(Deserializer reader){
-            number = reader.ReadInt32();
+            number = reader.ReadInt16();
             forceX = reader.ReadSingle();
             forceY = reader.ReadSingle();
 
