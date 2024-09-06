@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 100613095}
   - component: {fileID: 100613094}
   - component: {fileID: 100613093}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: skyblock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1457,7 +1457,7 @@ GameObject:
   - component: {fileID: 584776795}
   - component: {fileID: 584776794}
   - component: {fileID: 584776793}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5670,7 +5670,7 @@ GameObject:
   - component: {fileID: 669768353}
   - component: {fileID: 669768352}
   - component: {fileID: 669768351}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18613,7 +18613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 725324748}
   - component: {fileID: 725324747}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21031,6 +21031,7 @@ MonoBehaviour:
   movedCamera: {fileID: 1476953404}
   fixedCamera: {fileID: 257146847}
   moveSpeed: 0.1
+  tempTransform: {fileID: 0}
 --- !u!4 &1519202477
 Transform:
   m_ObjectHideFlags: 0

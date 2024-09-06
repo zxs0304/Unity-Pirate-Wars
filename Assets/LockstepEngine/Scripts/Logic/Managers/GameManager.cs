@@ -441,7 +441,10 @@ namespace LockstepTutorial {
         public void SwitchRound()
         {
 
-
+            if (IsClientMode)
+            {
+                return;
+            }
             currentRound++;
             currentRound %= 2;
 

@@ -12,7 +12,7 @@ public class Bomb : MonoBehaviour
     public float explodeForce = 10f;
     public Vector2 explodePosition ;
     public Vector2 testVector;
-   
+    public float damage = 10f;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -39,14 +39,14 @@ public class Bomb : MonoBehaviour
             {
   
                 Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
+                Minion minion = collider.GetComponent<Minion>();
+                Animator animator = collider.GetComponent<Animator>();
                 testVector = (collider.transform.position - transform.position).normalized;
-                //if (testVector.y == 0)
-                //{
-                //    testVector.y = 1f;
-                //}
+                print("testVector " +  testVector);
                 rb.AddForce(testVector * explodeForce , ForceMode2D.Impulse);
                 rb.AddTorque(1.5f,ForceMode2D.Impulse);
-                //print("¹¥»÷µ½ÁËÍæ¼Ò" + rb.name );
+                minion.SetHp(damage);
+                animator.Play("Hurt");
             }
         }
         throwing = false;
