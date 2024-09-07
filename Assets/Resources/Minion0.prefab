@@ -864,7 +864,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -931,7 +931,7 @@ MonoBehaviour:
   minionNumber: 1
   maxHP: 100
   currentHP: 0
-  correctionFactor: 35
+  correctionFactor: 0.9
   bomb: {fileID: 5127104832769906832, guid: 4768ec66a6146d7479932f317d6ef5df, type: 3}
   currentBomb: {fileID: 0}
   HpBar: {fileID: 6719969316558118112}
@@ -939,7 +939,9 @@ MonoBehaviour:
   wasGround: 0
   jumpEndTime: 2.5
   footOffset: 0.74
-  checkGroundLength: 0.1
+  checkGroundLength: 0.05
+  forceSetAngle: 30
+  torqueVelocity: 0.2
 --- !u!95 &4710181961458487734
 Animator:
   serializedVersion: 5

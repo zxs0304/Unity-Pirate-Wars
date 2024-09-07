@@ -30,7 +30,8 @@ public class Bomb : MonoBehaviour
     public void OnExplode()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position ,explodeRadius );
-
+        GameObject gb = Resources.Load<GameObject>("Explode");
+        Instantiate(gb,transform.position,Quaternion.identity);
         foreach (Collider2D collider in colliders)
         {
             print("’®µΩ¡À " + collider.name + " " + collider.tag);
@@ -55,7 +56,7 @@ public class Bomb : MonoBehaviour
         InputManager.Instance.canOperate = true;
         CameraManager.Instance.ActivateMovedCamera(transform);
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
 
     }
 

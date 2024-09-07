@@ -23,7 +23,8 @@ public class Minion : MonoBehaviour
     public float jumpEndTime = 2.5f;
     public float footOffset = 1f;
     public float checkGroundLength = 0.2f;
-
+    public float forceSetAngle = 30;
+    public float torqueVelocity = 0.2f;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -69,6 +70,7 @@ public class Minion : MonoBehaviour
         HpBar.gameObject.SetActive(true);
         InputManager.Instance.canOperate = true;
         CameraManager.Instance.ActivateMovedCamera(transform);
+        print("落地了");
     }
 
     public void SetHp(float damage)
@@ -96,7 +98,7 @@ public class Minion : MonoBehaviour
     {
 
         wasGround = isGround;
-        isGround = Physics2D.Raycast((Vector2)transform.position - new Vector2(0,footOffset), Vector2.down, checkGroundLength , LayerMask.GetMask("Ground"));
+        isGround = Physics2D.Raycast((Vector2)transform.position - new Vector2(0,footOffset), Vector2.down, checkGroundLength ,LayerMask.GetMask("Ground"));
 
         // 检测从空中落地的那一帧
         if (isGround && !wasGround)
@@ -105,13 +107,30 @@ public class Minion : MonoBehaviour
         }
 
     }
-
-
     private void OnCollisionEnter2D(Collision2D collision) //矫正落地时的方向
     {
+        rb.angularVelocity = rb.angularVelocity * torqueVelocity;
         float targetRotation = 0f; // 目标角度
-        rb.rotation = Mathf.LerpAngle(rb.rotation, targetRotation, Time.deltaTime * correctionFactor);
+        rb.rotation = Mathf.LerpAngle(rb.rotation, targetRotation, correctionFactor);
+        if (rb.rotation < forceSetAngle || rb.rotation > -forceSetAngle)
+        {
+            rb.rotation = 0;
+        }
     }
+
+    //private void OnCollisionStay2D(Collision2D collision) //矫正落地时的方向
+    //{
+
+
+    //    float targetRotation = 0f; // 目标角度
+    //    rb.rotation = Mathf.LerpAngle(rb.rotation, targetRotation,  correctionFactor);
+    //    if(rb.rotation < forceSetAngle || rb.rotation > -forceSetAngle)
+    //    {
+    //        rb.rotation = 0;
+    //    }
+        
+    //    print("StayROTATION " + rb.rotation);
+    //}
 
     private void OnDrawGizmos()
     {

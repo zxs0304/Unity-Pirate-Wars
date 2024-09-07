@@ -952,7 +952,7 @@ MonoBehaviour:
   minionNumber: 1
   maxHP: 100
   currentHP: 0
-  correctionFactor: 35
+  correctionFactor: 45
   bomb: {fileID: 5127104832769906832, guid: 4768ec66a6146d7479932f317d6ef5df, type: 3}
   currentBomb: {fileID: 0}
   HpBar: {fileID: 1820927433730926677}
