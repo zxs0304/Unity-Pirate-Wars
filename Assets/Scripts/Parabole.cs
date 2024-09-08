@@ -1,10 +1,9 @@
 
 using Lockstep.Logic;
 using LockstepTutorial;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Windows;
+
 
 
 public class Parabole : MonoBehaviour
@@ -46,7 +45,7 @@ public class Parabole : MonoBehaviour
 
     public void OnTouchBegan()
     {
-        text.text = "OnMouseDown + " + gameObject.name;
+
         line1.enabled = true;
         line2.enabled = true;
         dragPoint.SetActive(true);
@@ -56,7 +55,7 @@ public class Parabole : MonoBehaviour
 
     public void OnTouchDrag(Vector2 mousePosition)
     {
-        text.text = "OnMouseDrag + " + gameObject.name;
+
 
         addForce = Vector2.Distance(mousePosition, transform.position);
         addForce = Mathf.Clamp(addForce, 0, paraboleData.maxForce);
@@ -78,7 +77,7 @@ public class Parabole : MonoBehaviour
 
     public void OnTouchEnded()
     {
-        text.text = "OnMouseUp + " + gameObject.name;
+ 
 
 
         PlayerInput input = new PlayerInput

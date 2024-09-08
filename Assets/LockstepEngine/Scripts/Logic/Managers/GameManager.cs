@@ -5,6 +5,7 @@ using Lockstep.Logic;
 using Lockstep.Math;
 using Lockstep.Util;
 using UnityEngine;
+using UnityEngine.UI;
 using Debug = Lockstep.Logging.Debug;
 
 
@@ -47,10 +48,10 @@ namespace LockstepTutorial {
         public int currentRound = 0; //当前是哪个玩家的回合
 
         public Transform[] minionSpawnPoint;
-        //TEST
-        public Rigidbody2D bomb;
-        public float Testxuanzhuan = 3f;
 
+        //TEST
+        public StartPanel startPanel;
+        public Text roundText;
 
         private static string _traceLogPath {
             get {
@@ -82,7 +83,7 @@ namespace LockstepTutorial {
         }
 
         private void Start(){
-            _Start();
+            //_Start();
         }
 
         private void LateUpdate()
@@ -157,7 +158,7 @@ namespace LockstepTutorial {
         }
 
 
-        private void _Start(){
+        public void _Start(){
             DoStart();
             //foreach (var mgr in _mgrs) {
             //    mgr.DoStart();
@@ -180,6 +181,10 @@ namespace LockstepTutorial {
         }
 
         public void StartGame(int mapId, PlayerServerInfo[] playerInfos, int localPlayerId){
+
+            startPanel.ReadyToStartGame();
+
+
 
             _hasStart = true;
 
@@ -447,6 +452,7 @@ namespace LockstepTutorial {
             }
             currentRound++;
             currentRound %= 2;
+            roundText.text = $"当前是玩家{currentRound}的回合";
 
         }
         public bool IsMyRound()

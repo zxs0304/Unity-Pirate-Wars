@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7657536292522215157}
   - component: {fileID: 5874986309658326137}
   - component: {fileID: 3293777607659419493}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 546181789797938390}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2384683099671025021}
   - component: {fileID: 1820927433730926677}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8131012331719206482}
   - component: {fileID: 7344646401472569985}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Line2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1931614008832973510}
   - component: {fileID: 1064285962955831225}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8745801126722740069}
   - component: {fileID: 7436470122922993388}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Line1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 3524469418088767716}
   - component: {fileID: 6797466671136670920}
   - component: {fileID: 4199714165650360805}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 4938052803077653752}
   - component: {fileID: 4536448049474704513}
   - component: {fileID: 4425597659861108174}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 1298200784520111508}
   - component: {fileID: 8062710768308046502}
   - component: {fileID: 8364593182535488253}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Minion1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 384
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -885,7 +885,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -958,6 +958,10 @@ MonoBehaviour:
   HpBar: {fileID: 1820927433730926677}
   isGround: 0
   wasGround: 0
+  animator: {fileID: 0}
+  jumping: 0
   jumpEndTime: 2.5
-  footOffset: 1
-  checkGroundLength: 0.2
+  footOffset: 0.74
+  checkGroundLength: 0.03
+  forceSetAngle: 30
+  torqueVelocity: 0.2

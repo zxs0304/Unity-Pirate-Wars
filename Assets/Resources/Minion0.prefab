@@ -864,7 +864,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 384
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -937,9 +937,11 @@ MonoBehaviour:
   HpBar: {fileID: 6719969316558118112}
   isGround: 0
   wasGround: 0
+  animator: {fileID: 0}
+  jumping: 0
   jumpEndTime: 2.5
   footOffset: 0.74
-  checkGroundLength: 0.05
+  checkGroundLength: 0.03
   forceSetAngle: 30
   torqueVelocity: 0.2
 --- !u!95 &4710181961458487734

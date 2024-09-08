@@ -8,7 +8,7 @@ using Lockstep.Util;
 namespace Lockstep.FakeServer{
     public class Server : IMessageDispatcher {
         //network
-        public static IPEndPoint serverIpPoint = NetworkUtil.ToIPEndPoint("127.0.0.1", 10083);
+        public static IPEndPoint serverIpPoint = NetworkUtil.ToIPEndPoint("192.168.0.117", 10083);
         private NetOuterProxy _netProxy = new NetOuterProxy();
 
         //update

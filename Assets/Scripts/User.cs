@@ -74,7 +74,7 @@ public class User
     {
         string prefabName = "Minion" + localId;
         int Count = GameManager.Instance.minionSpawnPoint.Length;
-
+        short number = 1;
         for(int i = localId; i < Count; i += 2)
         {
             GameObject minion = Resources.Load<GameObject>(prefabName);
@@ -83,6 +83,8 @@ public class User
             gb.name = localId.ToString();
             Minion m = gb.GetComponent<Minion>();
             m.userId = localId;
+            m.minionNumber = number;
+            number++;
             minions.Add(m);
 
         }

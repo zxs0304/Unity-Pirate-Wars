@@ -37,7 +37,6 @@ public class InputManager : MonoSingleton<InputManager>
     private void Update()
     {
 
-        print("几个手指" + Input.touchCount);
         if (Input.touchCount > 0)
         {
             
@@ -102,7 +101,7 @@ public class InputManager : MonoSingleton<InputManager>
             {
                 
                 MenuPanel.Instance.ShowPanel(minion.minionNumber);
-
+                SoundManager.Instance.PlaySound(SoundManager.Instance.hi);
             }
             else
             {

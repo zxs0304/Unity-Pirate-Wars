@@ -18,7 +18,8 @@ public class Minion : MonoBehaviour
     public Slider HpBar;
     public bool isGround;
     public bool wasGround;
-
+    public Animator animator;
+    public bool jumping = false;
     //TEST
     public float jumpEndTime = 2.5f;
     public float footOffset = 1f;
@@ -27,6 +28,7 @@ public class Minion : MonoBehaviour
     public float torqueVelocity = 0.2f;
     private void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         currentHP = maxHP;
 
@@ -55,13 +57,20 @@ public class Minion : MonoBehaviour
 
     }
 
-    public void Jump(Vector2 force)
+    public void Jump(Vector2 force , float torque = 0)
     {
 
         HpBar.gameObject.SetActive(false);
         rb.AddForce(force, ForceMode2D.Impulse);
-        rb.AddTorque(-3f * -force.normalized.x, ForceMode2D.Impulse);
-
+        if(torque == 0)
+        {
+            rb.AddTorque(-3f * -force.normalized.x, ForceMode2D.Impulse);
+        }
+        else
+        {
+            rb.AddTorque( torque, ForceMode2D.Impulse);
+        }
+        jumping = true;
     }
 
     
@@ -83,6 +92,7 @@ public class Minion : MonoBehaviour
         }
         else
         {
+            animator.Play("Hurt");
             HpBar.value = currentHP / maxHP;
         }
 
@@ -91,7 +101,7 @@ public class Minion : MonoBehaviour
 
     private void Dead()
     {
-
+        animator.Play("Dead");
     }
 
     private void Update()
@@ -101,14 +111,16 @@ public class Minion : MonoBehaviour
         isGround = Physics2D.Raycast((Vector2)transform.position - new Vector2(0,footOffset), Vector2.down, checkGroundLength ,LayerMask.GetMask("Ground"));
 
         // 检测从空中落地的那一帧
-        if (isGround && !wasGround)
+        if (isGround && !wasGround && jumping)
         {
             JumpEnd();
+            jumping = false;
         }
 
     }
     private void OnCollisionEnter2D(Collision2D collision) //矫正落地时的方向
     {
+        //SoundManager.Instance.PlaySound(SoundManager.Instance.wall);
         rb.angularVelocity = rb.angularVelocity * torqueVelocity;
         float targetRotation = 0f; // 目标角度
         rb.rotation = Mathf.LerpAngle(rb.rotation, targetRotation, correctionFactor);

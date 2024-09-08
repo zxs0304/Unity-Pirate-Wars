@@ -7,7 +7,7 @@ using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace Lockstep.Logic{
     public class NetClient : IMessageDispatcher {
-        public static IPEndPoint serverIpPoint = NetworkUtil.ToIPEndPoint("127.0.0.1", 10083);
+        public static IPEndPoint serverIpPoint = NetworkUtil.ToIPEndPoint("192.168.0.117", 10083);
         private NetOuterProxy net = new NetOuterProxy();
         public Session Session;
 

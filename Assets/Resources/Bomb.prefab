@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8224519612340321393}
   - component: {fileID: 7233753100274050459}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Line1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 10
   m_Positions:
   - {x: -23.16095, y: -27.60342, z: 0}
   - {x: -22.398594, y: -26.559622, z: 0}
@@ -238,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7286950456278648855}
   - component: {fileID: 1286873560602381518}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Line2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 10
   m_Positions:
   - {x: -23.16095, y: -27.60342, z: 0}
   - {x: -24.337425, y: -29.43222, z: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 6406293090906935128}
   - component: {fileID: 2912555304852208858}
   - component: {fileID: 2124851790282555763}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Bomb
   m_TagString: Bomb
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -543,8 +543,11 @@ MonoBehaviour:
   explodeRadius: 2.6
   explodeForce: 10
   explodePosition: {x: 0, y: 0}
-  testVector: {x: 0, y: 0}
-  damage: 10
+  foceVector: {x: 0, y: 0}
+  maxDamage: 30
+  maxDistance: 3
+  correctForceY: 0.5
+  explodeforceCorrect: 1.5
 --- !u!61 &2124851790282555763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -577,7 +580,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0017352626, y: -0.045373276}
+  m_Offset: {x: 0, y: -0.045}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -600,7 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8074570047017547904}
   - component: {fileID: 4198197005000432945}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +666,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Time: 0.5
   m_PreviewTimeScale: 1
   m_Parameters:
